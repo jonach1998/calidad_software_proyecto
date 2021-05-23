@@ -1,0 +1,160 @@
+\documentclass[conference]{IEEEtran}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%Dependencies for [1.]
+\usepackage{enumerate}
+%Dependencies for [1.]
+\usepackage{graphicx}
+%\usepackage{xcolor}
+% Dependencies for Excel2Latex
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+% Dependencies for Excel2Latex
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{karnaugh-map}
+\usepackage{adjustbox}
+\usepackage{url}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
+%Habilita bookmarks en PDF
+\newcommand\MYhyperrefoptions{bookmarks=true,bookmarksnumbered=true,
+pdfpagemode={UseOutlines},plainpages=false,pdfpagelabels=true,
+colorlinks=true,linkcolor={black},citecolor={black},
+urlcolor={black}}
+\usepackage[\MYhyperrefoptions]{hyperref}
+%Titulo del documento
+\title{Trabajo de Investigación: Pruebas de regresión}
+
+\makeatletter
+\newcommand{\linebreakand}{%
+  \end{@IEEEauthorhalign}
+  \hfill\mbox{}\par
+  \mbox{}\hfill\begin{@IEEEauthorhalign} \hfill
+}
+\makeatother
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\author{
+	\IEEEauthorblockN{Chavarria Peña Jonathan Andrés}
+	\IEEEauthorblockA{\textit{Estudiante Ing. en Sistemas de Computación}\\ 
+	\textit{Universidad Fidélitas}\\
+	San José, Costa Rica \\
+	\href{mailto:jonach1998@gmail.com}{jonach1998@gmail.com}}
+\and
+	\IEEEauthorblockN{Morales Cordero Valeria}
+	\IEEEauthorblockA{\textit{Estudiante Ing. en Sistemas de Computación}\\ 
+	\textit{Universidad Fidélitas}\\
+	San José, Costa Rica \\
+	\href{mailto:valemc0603@gmail.com}{valemc0603@gmail.com}}
+\linebreakand % <------------- \and with a line-break
+	\IEEEauthorblockN{Phillips Tencio Edmond\hfill}
+	\IEEEauthorblockA{\textit{Estudiante Ing. en Sistemas de Computación}\\
+	\textit{Universidad Fidélitas}\\
+	Alajuela, Costa Rica \\
+	\href{mailto:ephillips10986@ufide.ac}{ephillips10986@ufide.ac}}
+\and
+	\IEEEauthorblockN{Sánchez Camacho Carlos Daniel} 
+	\IEEEauthorblockA{\textit{Estudiante Ing. en Sistemas de Computación}\\
+	\textit{Universidad Fidélitas}\\
+	San José, Costa Rica \\
+	\href{mailto:csanchez20965@ufide.ac}{csanchez20965@ufide.ac}}
+
+}
+
+
+%Inicio del documento
+\begin{document}
+
+\maketitle
+
+%Agrega numeracion a las paginas
+%\thispagestyle{plain}
+%\pagestyle{plain}
+
+\begin{abstract}
+	
+	
+\end{abstract}
+
+
+
+\section{INTRODUCCIÓN}
+
+
+\section{DESARROLLO}
+
+
+\subsection{Qué es una Prueba de Regresión} 
+
+Las pruebas de regresión se utilizan para determinar si las aplicaciones existentes aún pueden funcionar como se espera después de que se hayan actualizado o modificado.
+
+
+Todos estos tipos de cambios pueden interrumpir la funcionalidad actual del paquete de software. Para evitar efectos secundarios en la función actual, es importante utilizar pruebas de regresión y 
+
+\subsection{Cuándo debe realizarse la prueba de regresión}
+
+Es importante ejecutar este tipo de pruebas cada vez que cambia su código. Los cambios de aplicaciones que requieren pruebas de regresión son:
+
+\begin{enumerate}[1.]
+\item Mejoras.
+\item Parches.
+\item Cambios de configuración.
+\item Integración con otro software.
+\end{enumerate}
+
+Es necesario asegurarse de que las funciones del código antiguo puedan seguir funcionando normalmente después de que se incluya el nuevo código.
+
+
+\subsection{¿ Cómo hacer una prueba de regresión?}
+
+Se puede realizar de distintas formas, depende de los cambios realizados y de que tanta confiabilidad se necesita en los datos de la prueba realizada.
+
+\begin{itemize}
+
+\item Realizar pruebas a todo el código: Es la forma de garantizar que todos los casos de prueba en el programa sean realizados para su comprobar su integridad y funcionamiento. Este metodo suele ser costoso ya que a menudo requiere una gran inversión de tiempo y recursos.
+
+
+\item Realizar las pruebas en una parte especifica del código:   
+Permite seleccionar una parte específica de las pruebas que se ejecutaban, por lo tanto, no es tan costosa.
+
+\item Priorización de casos de prueba: Prioriza los casos de prueba de acuerdo con su impacto normalmente se prueban aspectos críticos y funcionalidades de uso frecuente.
+
+\end{itemize}
+
+
+\subsection{Software a utilizar}
+
+IntelliJ IDEA: Es desarrollado por JetBrains, es un IDE para JAVA.
+
+\subsection{Herramienta para las pruebas}
+	
+\subsubsection{JUnit}
+
+Es un entorno de pruebas para Java creado por Erich Gamma y Kent Beck. Se encuentra basado en SUnit creado originalmente para realizar pruebas unitarias para el lenguaje Smalltalk.
+
+\section{Conclusiones}
+
+
+
+\section{Referencias}
+
+
+%%\noindent
+[1] Alexynior.(2019). ¿Qué es una prueba de regresión?.       \url{https://adictec.com/que-son-pruebas-de-regresion/}
+\\
+%
+%\noindent
+%[2] The QA Testing Channel. Pruebas de Regresión en 1 Minuto. (2018).\url{https://www.youtube.com/watch?v=OEcIXnU6EQw}
+%
+%\noindent
+%[6] Tocci, R. (2007). Sistemas digitales Principios y Aplicaciones.\\
+
+\end{document}
