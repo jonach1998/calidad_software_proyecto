@@ -93,10 +93,12 @@ urlcolor={blue}}
 
 \subsection{Qué es una Prueba de Regresión} 
 
-Las pruebas de regresión se utilizan para determinar si las aplicaciones existentes aún pueden funcionar como se espera después de que se hayan actualizado o modificado.
+Son pruebas para determinar si las aplicaciones existentes aún pueden funcionar como se espera después de que se hayan actualizado o modificado. Cada cambio pueden interrumpir la funcionalidad del software.
 
+No se deben cambiar las pruebas de regresión hasta que las pruebas actuales pasen. Una fail en una prueba de regresión significa que una nueva funcionalidad ha afectado a otra que era correcta en el pasado.
 
-Todos estos tipos de cambios pueden interrumpir la funcionalidad actual del paquete de software. Para evitar efectos secundarios en la función actual, es importante utilizar pruebas de regresión y 
+Como también una falla en el test podría indicar que se ha vuelto a producir un error que ya había sido resuelto en el pasado.
+
 
 \subsection{Cuándo debe realizarse la prueba de regresión}
 
@@ -139,7 +141,12 @@ IntelliJ IDEA: Es desarrollado por JetBrains, es un IDE para JAVA.
 
 Es un entorno de pruebas para Java creado por Erich Gamma y Kent Beck. Se encuentra basado en SUnit creado originalmente para realizar pruebas unitarias para el lenguaje Smalltalk.
 
-\section{Conclusiones}
+\subsubsection{Unit tests}
+
+Este tipo de tests consiste en probar de forma individual las funciones o métodos. Generalmente son pruebas automatizadas de menor costo, y pueden ejecutarse rápidamente por un servidor de integración continua.
+
+
+%\section{Conclusiones}
 
 \normalsize
 
