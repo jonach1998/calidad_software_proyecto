@@ -1,0 +1,85 @@
+{
+  "id": "6a8f99d8-3a2d-4f0d-bf84-b1b4b31d6dcf",
+  "version": "2.0",
+  "name": "investigacion_1",
+  "url": "https://www.google.co.cr",
+  "tests": [{
+    "id": "69c06fe1-c5b0-4ec1-a3f3-c1a7c1eda150",
+    "name": "netflix",
+    "commands": [{
+      "id": "60819f39-2450-4daa-af4e-d7ca045beffa",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fb331e01-d255-4c2a-9f9a-40085cea0c48",
+      "comment": "",
+      "command": "type",
+      "target": "name=q",
+      "targets": [
+        ["name=q", "name"],
+        ["css=.gLFyf", "css:finder"],
+        ["xpath=//input[@name='q']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "netflix"
+    }, {
+      "id": "fb755730-e04f-4d20-9974-700d3bde5828",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=q",
+      "targets": [
+        ["name=q", "name"],
+        ["css=.gLFyf", "css:finder"],
+        ["xpath=//input[@name='q']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "b380bfcb-a001-4cf4-8fb2-7bb83b3aa5ef",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,1287.199951171875)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b8eb6e79-d2bc-4fed-901a-77362b0aae06",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//h3[contains(.,'Netflix - Home | Facebook')]",
+      "targets": [
+        ["css=.hlcw0c:nth-child(8) .LC20lb", "css:finder"],
+        ["xpath=//div[@id='rso']/div[8]/div/div/div/div/a/h3", "xpath:idRelative"],
+        ["xpath=//div[8]/div/div/div/div/a/h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Netflix - Home | Facebook')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5cb75520-f18a-45d9-b7f6-7f7aac8237e6",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Netflix | Facebook",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5512637e-08a9-4189-afae-fca5ac16931c",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "4904c6ed-1497-4ef9-a720-e952cd3a73b5",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.google.co.cr/"],
+  "plugins": []
+}
