@@ -84,10 +84,6 @@ urlcolor={blue}}
 \end{abstract}
 
 
-
-\section{INTRODUCCIÓN}
-
-
 \section{DESARROLLO}
 
 
@@ -99,8 +95,84 @@ No se deben cambiar las pruebas de regresión hasta que las pruebas actuales pas
 
 Como también una falla en el test podría indicar que se ha vuelto a producir un error que ya había sido resuelto en el pasado.
 
+\subsubsection{¿Qué son las pruebas de software?}
 
-\subsection{Cuándo debe realizarse la prueba de regresión}
+ Las pruebas del software pueden definirse como una actividad donde un sistema o una parte de un sistema es ejecutado de forma controlada es decir bajo unas condiciones específicas para observar su comportamiento y registrarlo.
+ 
+\subsubsection{¿Qué es validar un sistema? }
+
+Validar un sistema es un proceso por el cual se evalúa una parte o la totalidad de un sistema para determinar si satisface todos los requisitos especificados, un sistema puede ser validado durante el desarrollo o al final del mismo.
+\subsubsection{¿Qué características tiene que tener un software de calidad? }
+
+ Los atributos de un buen software son: mantenibilidad, confiabilidad, eficiencia y usabilidad.
+\subsubsection{Testing}
+Verificación dinámica del comportamiento de un programa usando un conjunto finito de casos de prueba seleccionados desde el dominio infinito de ejecución contra el comportamiento esperado.
+
+\subsubsection{¿Qué es un tester?}
+
+Un tester o probador es una persona que se encarga de realizar las pruebas de un sistema, por norma general suelen poseer buenas habilidades de desarrollo y codificación, conocimiento de algoritmos y lenguajes formales.
+
+\subsubsection{Técnicas de testing}
+
+ Una técnica de testing provee distintos criterios para seleccionar el conjunto de casos de prueba que serán usados para visitar el software
+ 
+\subsubsection{Tipos de pruebas}
+ 
+ Existen varios tipos de prueba, como por ejemplo: pruebas de aceptación, pruebas de desempeño, pruebas funcionales, pruebas del sistema, pruebas de caja blanca, pruebas de caja negra, pruebas de comportamiento y pruebas de regresión; en nuestro caso nos enfocaremos en las pruebas de regresión.
+ 
+\subsubsection{Mantenimiento del software }
+
+El mantenimiento del software implica modificarlo como resultado de errores o de alteraciones en los requerimientos del usuario, durante tarden las modificaciones nuevos errores se pueden introducir causando efectos secundarios adversos en el software. Entre los mantenimientos más comunes se encuentran la perspectiva que es aquella que mejora la funcionalidad del software, y la correctiva que es aquella que detecta y corrige defectos. Ya sea en la perspectiva o correctiva se deben asegurar que los cambios no afectan inadvertidamente las funcionalidades no modificadas, cuando esto ocurre se dice que hay un error de regresión.
+
+\subsubsection{Objetivo de las pruebas de regresión}
+ 
+ El objetivo de las pruebas de regresión es verificar la no regresión de la calidad luego de un cambio, además asegurar que los cambios no introducen un comportamiento no deseado o errores adicionales que implican la re ejecución de algunas o todas las pruebas realizadas. 
+ 
+\subsubsection{Pruebas de regresión}
+
+Es una tarea necesaria pero cara, el test de regresión es efectuado sobre un programa modificado para confirmar que los cambios son correctos y no han afectado de forma adversa en las partes no alteradas del programa, una de las estrategias del test de regresión es el modelo “retest all” que vuelve ejecutar todos los test, pero esta estrategia puede consumir tiempo y recursos de modo excesivo.
+
+\subsubsection{Técnicas de selección}
+
+ Las técnicas de selección de test de regresión intentan reducir el tiempo requerido para volver a probar un programa modificado seleccionando algún conjunto del total de los tests existentes, por lo tanto, el testing de regresión tiene como objetivo principal proporcionar la suficiente confianza en que las modificaciones efectuadas están correctas y no han afectado otras partes del software.
+ 
+\subsubsection{Testing de regresión}
+
+ El testing de regresión puede ser progresivo o correctivo, para el testing de regresión sería costoso repetir todo el conjunto de casos de prueba usados en el desarrollo inicial del software y no sería óptimo elegir un subconjunto al azar de estos casos de prueba, por lo tanto, es importante seleccionar un subconjunto conveniente de los casos de prueba que logren los objetivos del testing de revisión.
+
+\subsubsection{Selección}
+
+ La selección de los casos convenientes se puede hacer de diversas maneras y se han propuesto un número de acercamientos y de algoritmos de testing de regresión. El testing de regresión tiene importancia crucial a nivel de pruebas de unidad, integración y sistema.
+
+\subsubsection{Clasificación de las técnicas}
+ 
+Algunas técnicas seleccionan pruebas basadas en información recolectada de especificaciones del programa, la mayoría lo hace basadas en información acerca del código del programa y de la versión modificada, estas técnicas basadas en el código persiguen tres metas diferentes:
+
+\begin{itemize}
+\item Técnicas de cobertura: localizan componentes del programa que han sido modificados o afectados por modificaciones, y seleccionan pruebas del conjunto original de pruebas que ejercitan esos componentes.
+
+\item Técnicas de minimización: trabajan como las de cobertura, pero seleccionan conjuntos mínimos de pruebas a través de componentes del programa modificados o afectados. 
+
+\item Técnicas seguras: seleccionan cada prueba en el conjunto original de pruebas que pueden exponer una o más fallas de mejora.
+\end{itemize}
+
+\subsubsection{Importancia de las pruebas de regresión}
+
+Las pruebas de regresión se realizan generalmente después de la corrección de un defecto o después de la adición de nuevas funcionalidades, su objetivo es asegurar que ningún defecto se añadió al sistema después de la modificación; las llamamos nuevas de regresión porque tenemos que hacer nuevas pruebas donde ya se han realizado antes, por lo general este tipo de pruebas se realizan a través de herramientas automatizadas, pues muchas veces hay falta de tiempo para volver a ejecutar dichas pruebas así éstas se dejan en segundo plano. En las pruebas de regresión a veces se pueden encontrar más defectos que la primera vez, esto es debido a que el tester tiene más familiaridad con el sistema y al volver a ejecutar los casos de prueba es posible detectar algunos defectos que en la primera ejecución pasaron inadvertidos.
+
+\subsubsection{Plan de casos de prueba}
+ 
+ El plan de casos de prueba de regresión se puede clasificar en tres tipos: los casos de prueba que descubren toda la funcionalidad del sistema, los casos de prueba sólo para las características que han sido modificadas, y nuevos casos de prueba para las características que se vieron afectadas probablemente por el cambio. Las pruebas de regresión son una forma efectiva de reducir la cantidad de defectos que se pueden encontrar en un sistema.
+
+
+ La etapa de mantención en todo proceso de desarrollo de software es una fase que ocupa la mayor parte del proceso y es la etapa en donde el software puede sufrir muchos cambios debido a nuevos requerimientos, cambios de plataformas o dispositivos empleados por defectos encontrado; por lo tanto, es crucial poseer un mecanismo de prueba para validar que todos los cambios introducidos al software no hayan perjudicado las funcionalidades existentes, de allí que el testing de regresión sea una actividad muy importante en la etapa de mantenimiento. El testing de regresión posee una base que lo diferencia de los demás tipos de testing, este tiene como fundamento la existencia de un conjunto original en casos de pruebas correspondientes al software no modificado. 
+ 
+El testing de regresión es una tarea costosa pero necesaria la mayoría de las veces no se realizan por problemas como falta de recursos y tiempo, el testing de regresión permite mantener la calidad de las aplicaciones; la técnica más segura para encontrar defectos de regresión es el método de volver a probar todo, es decir, probar la aplicación modificada con el conjunto original de casos de prueba, esta es una técnica segura y muy cara además es ineficiente debido a que en una modificación no todo el código cambia sólo una parte y por lo tanto sólo habría que probar dicho sector. Las métricas más empleadas para medir la efectividad de las técnicas del testing de regresión son la inclusividad, precisión, eficiencia y  la generalidad. 
+
+
+
+
+\subsection{¿Cuándo debe realizarse la prueba de regresión?}
 
 Es importante ejecutar este tipo de pruebas cada vez que cambia su código. Los cambios de aplicaciones que requieren pruebas de regresión son:
 
@@ -109,11 +181,28 @@ Es importante ejecutar este tipo de pruebas cada vez que cambia su código. Los 
 \item Parches.
 \item Cambios de configuración.
 \item Integración con otro software.
+\item Un problema de rendimiento.
+\item Hay un cambio en los requisitos y el código se modifica de acuerdo con el requisito.
 \end{enumerate}
 
 Es necesario asegurarse de que las funciones del código antiguo puedan seguir funcionando normalmente después de que se incluya el nuevo código.
 
+Se debe tener en consideración varios aspectos a la hora de implementar las pruebas de regresión:
 
+\begin{itemize}
+\item Los cambios que se implementaron en el código y cuales otras partes son afectadas debido a esos cambios.
+\item Conocer la cantidad de casos que se realizan en las pruebas regresión.
+\item Seleccionar los casos necesarios para comprobar el buen funcionamiento del programa.
+\item Si son muchos casos los que se necesitan realizar considerar si lo recomendado son las pruebas automáticas o las manuales.
+\end{itemize}
+
+Es necesario especificar que toda modificación, por mínima que sea, necesitará de pruebas de regresión. 
+Para determinar la cantidad de casos en las pruebas de regresión a realizar se debe saber que tanto riesgo de error corre el programa después de realizados los cambios o actualizaciones, si el riesgo es alto hay mayor necesidad de realizar las pruebas, si es riesgo es bajo o nulo se podrían realizar de igual forma o hacer menos cantidad de casos.
+
+Es importante tener en consideración que en el más pequeño de los cambios el riesgo puede ser alto, por lo mismo es importante estudiar el impacto de cada cambio.
+
+
+JONATHAN
 \subsection{¿ Cómo hacer una prueba de regresión?}
 
 Se puede realizar de distintas formas, depende de los cambios realizados y de que tanta confiabilidad se necesita en los datos de la prueba realizada.
@@ -133,10 +222,69 @@ Permite seleccionar una parte específica de las pruebas que se ejecutaban, por 
 
 \subsection{Software a utilizar}
 
-IntelliJ IDEA: Es desarrollado por JetBrains, es un IDE para JAVA.
+
 
 \subsection{Herramienta para las pruebas}
-	
+
+Para poder realizar el trabajo de una prueba de regresión en algún proyecto de revisión de la calidad del software existen herramientas que nos facilitan un poco el trabajo, estos programas o softwares nos ayudan a hacer las pruebas de regresión tanto automáticas como manuales facilitando este trabajo.
+Si bien los usuarios tienen la opción de utilizar herramientas gratuitas de prueba de regresión de código abierto, la mayoría de los expertos en tecnología argumentan que es prudente adoptar una visión a más largo plazo y considerar las ventajas de adoptar una herramienta de prueba comercial y de esta manera que sea una versión más completa y confiable. Ver 1
+
+\subsubsection{Ejemplos de herramientas}
+
+Según se dice en investigaciones la herramienta Selenio es una de las herramientas más usadas en la actualidad, pero poco a poco siendo más cuestionada por los usuarios ya que se dice que está siendo superada por otras herramientas tales como:
+\begin{itemize}
+\item Testingwhiz: Herramienta de prueba de código automática y fácil de usar. ver 2
+
+\item Sahi Pro: Es una herramienta de automatización de pruebas única que se centra en el evaluador y, al mismo tiempo, se basa en el diseño y la funcionalidad de los negocios ver 3
+
+\item Silk Test: Herramienta de la empresa Micro Focus centrada en las pruebas de regresión tanto para desarrollo web como para desarrollo móvil.
+
+Entre otras.
+
+\end{itemize}
+
+\subsubsection{Ventajas y Desventajas de las pruebas de regresión} 
+
+Como en muchos temas los criterios buenos o malos deben de existir y este caso no es una excepción, en este caso también existen ventajas que hacen que este método sea muy utilizado y las desventajas para tomar en cuanta.
+
+\begin{enumerate}
+
+\item Ventajas 
+
+Algunas de las ventajas del método de pruebas de regresión son los siguientes:
+
+\begin{enumerate}[1.1]
+\item Primeramente, nos permite asegurarnos de que se pueda hacer cualquier corrección o cambio de código en un módulo o en la aplicación sin afectar el resto de código que ya fue probado exitosamente.
+
+\item Ayudan a mejorar el producto que vamos a entregar al cliente ya que nos aseguramos de que el código o la aplicación funcione correctamente.
+\item Estas pruebas de regresión se pueden hacer utilizando herramientas de automatización haciendo el trabajo más fácil y asegurándonos que se esté haciendo correctamente.
+
+\item Se pueden identificar fácilmente los errores que se pudieran dar por algún cambio o actualización.
+
+
+\item Asegura que todos los errores que se encontraron previamente no sean creables nuevamente.
+
+\item Durante las pruebas de regresión, los casos de prueba se priorizan según los cambios realizados en la función o el módulo de la aplicación. La característica o módulo donde se realizan los cambios o modificaciones que toda la característica se toma en prioridad para la prueba.
+\end{enumerate}
+
+\item Desventajas
+
+\begin{enumerate}[2.1]
+\item Si las pruebas de regresión no se realizan con una herramienta de automatización se pueden volver muy tediosas ya que se tienen que hacer las pruebas una y otra vez.
+
+\item Se tiene que hacer una prueba de regresión con cualquier cambio que se realice no importa que tan pequeño sea el cambio igual puede generar errores en el código y complicar el proyecto.
+
+\item Las herramientas de automatización de pruebas de regresión se recomiendan utilizar las más completas por lo que en algunos casos las herramientas tienden a ser bastante costosas dependiendo de lo que se quiera.
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+
+
+
+
 \subsubsection{JUnit}
 
 Es un entorno de pruebas para Java creado por Erich Gamma y Kent Beck. Se encuentra basado en SUnit creado originalmente para realizar pruebas unitarias para el lenguaje Smalltalk.
@@ -154,6 +302,11 @@ Este tipo de tests consiste en probar de forma individual las funciones o métod
 \bibitem{Alexynior} \textsc{Alexynior} (2019). \textit{¿Qué es una prueba de regresión?.} \url{https://adictec.com/que-son-pruebas-de-regresion/}\\
 
 \bibitem{QAtesting} \textsc{The QA Testing Channel.} (2018). \textit{Pruebas de Regresión en 1 Minuto.} \url{https://www.youtube.com/watch?v=OEcIXnU6EQw} \\
+
+
+\bibitem{INTERWARE} \textsc{INTERWARE} (2018). \textit{IMPORTANCIA DE REALIZAR REGRESSION TESTING.} \url{https://www.interware.com.mx/blog/importancia-de-realizar-pruebas-de-regresi\%C3\%B3n\#:\~:text=Se\%20dice\%20que\%20una\%20regresi\%C3\%B3n,que\%20todo\%20sigue\%20funcionando\%20bien.} \\
+
+\bibitem{Isaac Álvarez Diz} \textsc{Isaac Álvarez Diz} (2018). \textit{¿Por qué un test de Regresión?} \url{https://qanewsblog.com/2018/01/22/por-que-un-test-de-regresion/} \\
 \end{thebibliography}
 
 
