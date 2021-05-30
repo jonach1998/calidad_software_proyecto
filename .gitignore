@@ -1,2 +1,6 @@
 .idea
 /**/.idea/
+*.synctex.gz
+*.out
+*.log
+*.aux
