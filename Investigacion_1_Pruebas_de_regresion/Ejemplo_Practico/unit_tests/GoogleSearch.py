@@ -18,7 +18,8 @@ class GoogleSearch(TestCase):
         self.driver.get('https://google.com/')
         self.driver.find_element_by_name('q').send_keys('Netflix' + Keys.RETURN)
         self.driver.find_element_by_xpath("//h3[contains(.,'Netflix Costa Rica')]").click()
-        sleep(5)
+        sleep(1)
+        self.assertEqual(self.driver.title, 'Netflix Costa Rica: Ve series online, ve películas online')
 
     def tearDown(self):
         self.driver.close()
