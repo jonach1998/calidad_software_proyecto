@@ -20,12 +20,29 @@
 \usepackage{karnaugh-map}
 \usepackage{adjustbox}
 \usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
+
 %Habilita bookmarks en PDF
 \newcommand\MYhyperrefoptions{bookmarks=true,bookmarksnumbered=true,
 pdfpagemode={UseOutlines},plainpages=false,pdfpagelabels=true,
 colorlinks=true,linkcolor={black},citecolor={black},
 urlcolor={blue}}
 \usepackage[\MYhyperrefoptions]{hyperref}
+%Habilita bookmarks en PDF
+
+% Dependencies for code blocks
+% More info in https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+\usepackage{listings}
+\lstdefinestyle{CMD}
+{
+    backgroundcolor=\color{black},
+    basicstyle=\scriptsize\color{white}\ttfamily,
+    breaklines=true,
+    postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+    keywordstyle=\textcolor{red},
+    morekeywords={pip, echo, if, ERRORLEVEL}
+}
+% Dependencies for code blocks
+
 %Titulo del documento
 \title{Trabajo de Investigación: Pruebas de regresión}
 
@@ -202,8 +219,9 @@ Para determinar la cantidad de casos en las pruebas de regresión a realizar se 
 Es importante tener en consideración que en el más pequeño de los cambios el riesgo puede ser alto, por lo mismo es importante estudiar el impacto de cada cambio.
 
 
-JONATHAN
+
 \subsection{¿ Cómo hacer una prueba de regresión?}
+JONATHAN
 
 Se puede realizar de distintas formas, depende de los cambios realizados y de que tanta confiabilidad se necesita en los datos de la prueba realizada.
 
@@ -222,7 +240,19 @@ Permite seleccionar una parte específica de las pruebas que se ejecutaban, por 
 
 \subsection{Software a utilizar}
 
+\begin{lstlisting}[style=CMD]
+@echo off
+python -c "import selenium"
+if ERRORLEVEL 1 (pip check selenium & pip install selenium)
 
+python -c "import webdriver_manager"
+if ERRORLEVEL 1 (pip check webdriver-manager & pip install webdriver-manager)
+
+python -c "import HtmlTestRunner"
+if ERRORLEVEL 1 (pip check html-testRunner & pip install html-testRunner)
+
+if ERRORLEVEL 0 (echo Done) else (echo Some errors, please check)
+\end{lstlisting}
 
 \subsection{Herramienta para las pruebas}
 
