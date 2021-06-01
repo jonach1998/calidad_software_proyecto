@@ -41,6 +41,7 @@ urlcolor={blue}}
     keywordstyle=\textcolor{red},
     morekeywords={pip, echo, if, ERRORLEVEL}
 }
+
 % Dependencies for code blocks
 
 %Titulo del documento
@@ -96,7 +97,7 @@ urlcolor={blue}}
 %\pagestyle{plain}
 
 \begin{abstract}
-	
+	In this investigation we found out important and relevant information about regression tests, and all the characteristics in this method like regression tools, the meaning, the functions, advantages, and disadvantages and most important how to develop this method.  We studied this method to acknowledge the regression tests to be able to know how we will be able to use it in our projects and professional life. This is an important method because it helps us to verify a good base project, whit minimum to no errors.
 	
 \end{abstract}
 
@@ -216,12 +217,10 @@ Se debe tener en consideración varios aspectos a la hora de implementar las pru
 Es necesario especificar que toda modificación, por mínima que sea, necesitará de pruebas de regresión. 
 Para determinar la cantidad de casos en las pruebas de regresión a realizar se debe saber que tanto riesgo de error corre el programa después de realizados los cambios o actualizaciones, si el riesgo es alto hay mayor necesidad de realizar las pruebas, si es riesgo es bajo o nulo se podrían realizar de igual forma o hacer menos cantidad de casos.
 
-Es importante tener en consideración que en el más pequeño de los cambios el riesgo puede ser alto, por lo mismo es importante estudiar el impacto de cada cambio.
-
+Es importante tener en consideración que en el más pequeño de los cambios el riesgo puede ser alto, por lo mismo es importante estudiar el impacto de cada cambio. Es importante saber que lo primero que se debe realizar es el retesteo de todos los casos de la prueba de regresión, posterior a esto es necesario priorizar los casos en especifico que tienen modificaciones.
 
 
 \subsection{¿ Cómo hacer una prueba de regresión?}
-JONATHAN
 
 Se puede realizar de distintas formas, depende de los cambios realizados y de que tanta confiabilidad se necesita en los datos de la prueba realizada.
 
@@ -269,6 +268,10 @@ Según se dice en investigaciones la herramienta Selenio es una de las herramien
 
 \item Silk Test: Herramienta de la empresa Micro Focus centrada en las pruebas de regresión tanto para desarrollo web como para desarrollo móvil.
 
+\item Junit: Es un entorno de pruebas para Java creado por Erich Gamma y Kent Beck. Se encuentra basado en SUnit creado originalmente para realizar pruebas unitarias para el lenguaje Smalltalk.
+
+\item Unit tests: Este tipo de tests consiste en probar de forma individual las funciones o métodos. Generalmente son pruebas automatizadas de menor costo, y pueden ejecutarse rápidamente por un servidor de integración continua.
+
 Entre otras.
 
 \end{itemize}
@@ -311,20 +314,253 @@ Algunas de las ventajas del método de pruebas de regresión son los siguientes:
 
 \end{enumerate}
 
+\subsection{Prueba de regresión utilizando framework de Selenium}
+
+
+En el siguiente apartado se mostrará un ejemplo de una prueba de regresión.
+
+Es importante actualizar las dependencias del lenguaje a utilizar; en este ejemplo las dependencias a utilizar se se establecieron en un  archivos de texto sin formato, guardados con la extensión .BAT que contienen un conjunto de instrucciones que se utilizaran con el cmd de Windows.
+
+\begin{lstlisting}[style=CMD]
+
+C:\git\calidad_software_proyecto\Investigacion_1_Pruebas_de_regresion\Ejemplo_Practico>python_dependencies.bat
+
+C:\git\calidad_software_proyecto\Investigacion_1_Pruebas_de_regresion\Ejemplo_Practico>python -c "import selenium"
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'selenium'
+
+C:\git\calidad_software_proyecto\Investigacion_1_Pruebas_de_regresion\Ejemplo_Practico>if ERRORLEVEL 1 (pip check selenium   & pip install selenium )
+No broken requirements found.
+Collecting selenium
+  Using cached selenium-3.141.0-py2.py3-none-any.whl (904 kB)
+Requirement already satisfied: urllib3 in c:\python39\lib\site-packages (from selenium) (1.26.5)
+Installing collected packages: selenium
+Successfully installed selenium-3.141.0
+
+C:\git\calidad_software_proyecto\Investigacion_1_Pruebas_de_regresion\Ejemplo_Practico>python -c "import webdriver_manager"
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'webdriver_manager'
+
+C:\git\calidad_software_proyecto\Investigacion_1_Pruebas_de_regresion\Ejemplo_Practico>if ERRORLEVEL 1 (pip check webdriver-manager   & pip install webdriver-manager )
+No broken requirements found.
+Collecting webdriver-manager
+  Using cached webdriver_manager-3.4.2-py2.py3-none-any.whl (16 kB)
+Requirement already satisfied: crayons in c:\python39\lib\site-packages (from webdriver-manager) (0.4.0)
+Requirement already satisfied: requests in c:\python39\lib\site-packages (from webdriver-manager) (2.25.1)
+Requirement already satisfied: configparser in c:\python39\lib\site-packages (from webdriver-manager) (5.0.2)
+Requirement already satisfied: colorama in c:\python39\lib\site-packages (from crayons->webdriver-manager) (0.4.4)
+Requirement already satisfied: idna<3,>=2.5 in c:\python39\lib\site-packages (from requests->webdriver-manager) (2.10)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in c:\python39\lib\site-packages (from requests->webdriver-manager) (1.26.5)
+Requirement already satisfied: chardet<5,>=3.0.2 in c:\python39\lib\site-packages (from requests->webdriver-manager) (4.0.0)
+Requirement already satisfied: certifi>=2017.4.17 in c:\python39\lib\site-packages (from requests->webdriver-manager) (2020.12.5)
+Installing collected packages: webdriver-manager
+Successfully installed webdriver-manager-3.4.2
+
+C:\git\calidad_software_proyecto\Investigacion_1_Pruebas_de_regresion\Ejemplo_Practico>python -c "import HtmlTestRunner"
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'HtmlTestRunner'
+
+C:\git\calidad_software_proyecto\Investigacion_1_Pruebas_de_regresion\Ejemplo_Practico>if ERRORLEVEL 1 (pip check html-testRunner   & pip install html-testRunner )
+No broken requirements found.
+Collecting html-testRunner
+  Using cached html_testRunner-1.2.1-py2.py3-none-any.whl (11 kB)
+Requirement already satisfied: Jinja2>=2.10.1 in c:\python39\lib\site-packages (from html-testRunner) (3.0.1)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\python39\lib\site-packages (from Jinja2>=2.10.1->html-testRunner) (2.0.1)
+Installing collected packages: html-testRunner
+Successfully installed html-testRunner-1.2.1
+
+C:\git\calidad_software_proyecto\Investigacion_1_Pruebas_de_regresion\Ejemplo_Practico>if ERRORLEVEL 0 (echo Done )  else (echo Some errors, please check )
+Done
+C:\git\calidad_software_proyecto\Investigacion_1_Pruebas_de_regresion\Ejemplo_Practico>
+
+\end{lslisting}
+
+Estas dependencias son para utilizar las siguientes librerias:
+
+\begin{lstlisting}[language=Python]
+
+from unittest import TestSuite, makeSuite
+from unit_tests.GoogleSearch import GoogleSearch
+from HtmlTestRunner import HTMLTestRunner
+
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.support.ui import WebDriverWait
+from unittest import TestCase
+from time import sleep
+
+\end{lstlisting}
+
+En la prueba de regresión se cuenta con un caso a testear, este abrirá Google, buscara Netflix en la barra de busqueda y enviará un ENTER para comenzar la busqueda. Posteriormente con el mouse dará click a la opción NETFLIX COSTA RICA, esta opción deberá concordar con la establecida en el script.
+
+\begin{lstlisting}[language=Python, breaklines=true,
+    postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}]
+
+    def setUp(self):
+        self.driver = webdriver.Chrome(ChromeDriverManager().install())
+        self.driver.implicitly_wait(10)
+        self.driver.maximize_window()
+        self.wait = WebDriverWait(self.driver, 10)
+
+    def test_search_netflix(self):
+        self.driver.get('https://google.com/')
+        self.driver.find_element_by_name('q').send_keys('Netflix' + Keys.RETURN)
+        self.driver.find_element_by_xpath("//h3[contains(.,'Netflix Costa Rica')]").click()
+        sleep(1)
+        self.assertEqual(self.driver.title, 'Netflix Costa Rica: Ve series online, ve peliculas online')
+
+    def tearDown(self):
+        self.driver.close()
+        self.driver.quit()
+        print('Test Completed')
+
+\end{lstlisting}
+
+Al correr el script este hará todo de manera automática, acontinuación se mostrara cada pantalla que este abre para realizar el test.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.47]{imagenes/Imagen 001.pdf}
+\caption{Test abriendo Google y corriendo automáticamente}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.47]{imagenes/4Abreelbuscador.pdf}
+\caption{Abre Google}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.47]{imagenes/5buscanetflix.pdf}
+\caption{Escribe en el buscador lo deseado}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.47]{imagenes/6clicknetflixcostarica.pdf}
+\caption{Da click en la pagina deseada}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.47]{imagenes/7abrelapaginayconfirmanombre.pdf}
+\caption{Abre la pagina y comprueba que el titulo concuerde}
+\end{figure}
+
+Si la prueba falla, se muestra como un error normal y se indica el porque del fallo, en esta ocasión el titulo de la pagina no coincide con el que se estipula en el script.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.47]{imagenes/8testfail.pdf}
+\caption{Test cuando falla}
+\end{figure}
+
+Cuando el test pasa, este genera un reporte con la información de la prueba. Dentro de la información esta la duración del test, si este pasa y a la hora en la que inicia.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.47]{imagenes/11testecompleto.pdf}
+\caption{Test cuando pasa}
+\end{figure}
+
+
+\subsection{Prueba de regresión utilizando Selenium IDE}
+
+Para poder utilizar esta opción, lo primero que se deber realizar es la descarga del IDE de Selenium, esta es una extension de Google Chrome.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.47]{imagenes/12SeleniumIDE.pdf}
+\caption{Selenium IDE}
+\end{figure}
+
+Esta herramienta permite realizar pruebas de regresión  a paginas web sin tener que escribir código. En este ejemplo se probará que se pueda ingresar a la pagina de Facebook de Netflix. 
+
+Este IDE registra las interacciones con sitios web para ayudar a generar y mantener la automatización del sitio, realizar pruebas y eliminar la necesidad de realizar tomas repetitivas manualmente.
+
+La siguiente imagen es de la linea de comandos que debe realizar el test, cuando alguno de estos falla se pone en color rojo la linea que fallo.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.47]{imagenes/13COMANDOS.pdf}
+\caption{Linea de comandos}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.47]{imagenes/14seleniumfail.pdf}
+\caption{Error en la linea de comandos}
+\end{figure}
+
+El IDE muestra cuales comandos logra completar y cuales no, los muestra conforme lo va realizando. En este ejemplo el tiempo de espera fue muy largo y no se pudo encontrar la pagina de Netflix - Home | Facebook.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.47]{imagenes/15Running.pdf}
+\caption{Corrida en curso}
+\end{figure}
+
+Ejemplo de cuando el test logra completar todos los comandos establecidos.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.47]{imagenes/16seleniumpass.pdf}
+\caption{Test cuando pasa}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1.4]{imagenes/17runningpass.pdf}
+\caption{Corrida en curso cuando pasa}
+\end{figure}
+
+El IDE lo que hace es grabar lo que se realiza en la pagina web esto lo convierte en comandos que posteriormente realiza automaticamente.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.47]{imagenes/20.pdf}
+\caption{Selenium IDE corriendo el test automáticamente}
+\end{figure}
+
+
+Lo primero que se debe realizar es especificarle al IDE cual pagina es la que debe abrir para comenzar el test. El espacio marcado con el color amarillo es donde se debe introducir el URL.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.47]{imagenes/18.pdf}
+\caption{URL}
+\end{figure}
+
+Posterior a introducir el URL se debe comenzar a grabar para esto se debe dar click en el boton REC.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.47]{imagenes/19.1.pdf}
+\caption{Botón de grabación}
+\end{figure}
+
+Para finalizar la grabación se pulsa el boton que esta  a la par del de grabar, pausar.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.47]{imagenes/19pausargrabacion.pdf}
+\caption{Botón para pausar la grabación}
+\end{figure}
 
 
 
-
-\subsubsection{JUnit}
-
-Es un entorno de pruebas para Java creado por Erich Gamma y Kent Beck. Se encuentra basado en SUnit creado originalmente para realizar pruebas unitarias para el lenguaje Smalltalk.
-
-\subsubsection{Unit tests}
-
-Este tipo de tests consiste en probar de forma individual las funciones o métodos. Generalmente son pruebas automatizadas de menor costo, y pueden ejecutarse rápidamente por un servidor de integración continua.
-
+Y de esa manera queda listo el test para correrlo. Esta es una opción interesante para las personas que no sepan programar.
 
 %\section{Conclusiones}
+
+
 
 \normalsize
 
