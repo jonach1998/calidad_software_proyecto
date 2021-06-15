@@ -1,4 +1,4 @@
-\documentclass[conference]{IEEEtran}
+ \documentclass[conference]{IEEEtran}
 \usepackage[utf8]{inputenc}
 \usepackage{textcomp}
 \usepackage[spanish]{babel}
@@ -125,12 +125,80 @@ Las pruebas pueden ser desarrolladas por los desarrolladores, mismos que conocen
 
 \section{Software a utilizar}
 
+El software a utilizar en la presente investigación es Python -m unittes, es el módulo unittest, este ofrece la posibilidad de crear las pruebas implementando una clase llamada unittest.TestCase en la que se incluirán métodos de pruebas. Tales como los siguientes: 
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.45]{imagenes/metodos_-m.pdf}
+\caption{Métodos de unittest.}
+\end{figure}
+
+El modulo de unit test de python permite utilizar distintos contenedores al realizar pruebas unitarias, como por ejemplo: list, dict y set.
+
+Cada una de las pruebas puede devolver tres respuestas dependiendo del resultado, así como las siguientes:
+
+\begin{itemize}
+\item OK: Para mostrar que la prueba se ha completado con éxito.
+\item FAIL: Para mostrar que la prueba no ha pasado exitosamente y se lanza una excepción como esta: AssertionError (sentencia verdadero-falso)
+\item ERROR: Para dar a entender que la prueba no ha pasado exitosamente, pero el resultado en lugar de ser una aserción es un error.
+\end{itemize}
+
+Unittest.TestCase este incluye la cantidad de tiempo que tomaron las pruebas, junto con un indicador de estado para cada prueba. 
+
+\subsection{Escritura de pruebas unitarias para el paquete test}
+
+Se prefiere que las pruebas que utilizan el módulo unittest sigan algunas pautas. Una es nombrar el módulo de prueba comenzando con test y terminarlo con el nombre del módulo que se está probando. Los métodos de prueba en el módulo de prueba deben comenzar con test y terminar con una descripción de lo que el método está probando. Esto es necesario para que el controlador de prueba reconozca los métodos como métodos de prueba. Por lo tanto, no se debe incluir una cadena de caracteres de documentación para el método. Se debe usar un comentario (como Tests function returns only True or False) para proporcionar documentación para los métodos de prueba. Esto se hace porque las cadenas de documentación se imprimen si existen y, por lo tanto, no se indica qué prueba se está ejecutando.
+
+\subsection{Plantilla básica para realizar unit test}
+
+\begin{lstlisting}[language=Python, breaklines=true,
+    postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}]
+import unittest
+from test import support
+
+class MyTestCase1(unittest.TestCase):
+
+    # Only use setUp() and tearDown() if necessary
+
+    def setUp(self):
+        ... code to execute in preparation for tests ...
+
+    def tearDown(self):
+        ... code to execute to clean up after tests ...
+
+    def test_feature_one(self):
+        # Test feature one.
+        ... testing code ...
+
+    def test_feature_two(self):
+        # Test feature two.
+        ... testing code ...
+
+    ... more test methods ...
+
+class MyTestCase2(unittest.TestCase):
+    ... same structure as MyTestCase1 ...
+
+... more test classes ...
+
+if __name__ == '__main__':
+    unittest.main()
+
+\end{lstlisting}
+
 
 \section{Programa a probar}
 
 El código al que se le realizarán pruebas será desarrollado en Python, este programa solicita al usuario que ingrese la cédula de la persona que desea buscar y la fecha de nacimiento de la misma, esta información se utilizará para encontrar los datos de la persona en una base de datos ya establecida. Al encontrar la información se imprime en pantalla la siguiente información: saludo, nombre completo, edad, centro de votación y los candidatos oficiales a presidencia y los posibles candidatos. Siendo esta ultima información recolectada desde Wikipedia. La base de datos estará ubicada en el mismo directorio raíz donde esta el programa, si este se borra o se le modifica el nombre, el programa no funcionará.
 
 La idea de este programa es lograr proporcionar de manera fácil información para los votantes. Ya que fácilmente pueden conocer en que región deben votar y los actuales candidatos, además de posibles candidatos a presidencia.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{imagenes/ejemplo_programa_a_probar.jpeg}
+\caption{Ejemplo de impresión del programa a probar.}
+\end{figure}
+
 
 \section{Pruebas a realizar}
 
