@@ -1,0 +1,196 @@
+\documentclass[conference]{IEEEtran}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%Dependencies for [1.]
+\usepackage{enumerate}
+%Dependencies for [1.]
+\usepackage{graphicx}
+%\usepackage{xcolor}
+% Dependencies for Excel2Latex
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+% Dependencies for Excel2Latex
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{karnaugh-map}
+\usepackage{adjustbox}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
+
+%Habilita bookmarks en PDF
+\newcommand\MYhyperrefoptions{bookmarks=true,bookmarksnumbered=true,
+pdfpagemode={UseOutlines},plainpages=false,pdfpagelabels=true,
+colorlinks=true,linkcolor={black},citecolor={black},
+urlcolor={blue}}
+\usepackage[\MYhyperrefoptions]{hyperref}
+%Habilita bookmarks en PDF
+
+% Dependencies for code blocks
+% More info in https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+\usepackage{listings}
+\lstdefinestyle{CMD}
+{
+    backgroundcolor=\color{black},
+    basicstyle=\scriptsize\color{white}\ttfamily,
+    breaklines=true,
+    postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+    keywordstyle=\textcolor{red},
+    morekeywords={pip, echo, if, ERRORLEVEL}
+}
+
+% Dependencies for code blocks
+
+%Titulo del documento
+\title{Proyecto Final de Investigación: Avance 1}
+
+\makeatletter
+\newcommand{\linebreakand}{%
+  \end{@IEEEauthorhalign}
+  \hfill\mbox{}\par
+  \mbox{}\hfill\begin{@IEEEauthorhalign} \hfill
+}
+\makeatother
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\author{
+	\IEEEauthorblockN{Chavarria Peña Jonathan Andrés}
+	\IEEEauthorblockA{\textit{Estudiante Ing. en Sistemas de Computación}\\ 
+	\textit{Universidad Fidélitas}\\
+	San José, Costa Rica \\
+	\href{mailto:jonach1998@gmail.com}{jonach1998@gmail.com}}
+\and
+	\IEEEauthorblockN{Morales Cordero Valeria}
+	\IEEEauthorblockA{\textit{Estudiante Ing. en Sistemas de Computación}\\ 
+	\textit{Universidad Fidélitas}\\
+	San José, Costa Rica \\
+	\href{mailto:valemc0603@gmail.com}{valemc0603@gmail.com}}
+\linebreakand % <------------- \and with a line-break
+	\IEEEauthorblockN{Phillips Tencio Edmond\hfill}
+	\IEEEauthorblockA{\textit{Estudiante Ing. en Sistemas de Computación}\\
+	\textit{Universidad Fidélitas}\\
+	Alajuela, Costa Rica \\
+	\href{mailto:ephillips10986@ufide.ac}{ephillips10986@ufide.ac}}
+\and
+	\IEEEauthorblockN{Sánchez Camacho Carlos Daniel} 
+	\IEEEauthorblockA{\textit{Estudiante Ing. en Sistemas de Computación}\\
+	\textit{Universidad Fidélitas}\\
+	San José, Costa Rica \\
+	\href{mailto:csanchez20965@ufide.ac}{csanchez20965@ufide.ac}}
+
+}
+
+
+%Inicio del documento
+\begin{document}
+
+\maketitle
+
+%Agrega numeracion a las paginas
+%\thispagestyle{plain}
+%\pagestyle{plain}
+
+%\begin{abstract}
+
+	
+%\end{abstract}
+
+
+\section{DESARROLLO}
+
+\section{Investigación de la tecnología}
+
+\subsection{Unit Testing}
+
+En el siguiente proyecto se realizarán pruebas a un programa, las mismas se harán utilizando unit testing; pero para poder utilizarlo es importante comprender qué es y cómo utilizarlo. El unit test se define, como el código necesario para comprobar que el código del programa principal esté funcionando como esperábamos. Los unit test son una de muchas pruebas que se pueden realizar para comprobar que los programas estén en funcionamiento.
+Los unit test se conforman de pequeños tests que comprueban que cada parte de los requisitos del código estén correctos; asimismo, se verifican sus resultados.
+A la hora de realizar un unit test se puede dividir por partes especificas (Organizar, actuar y afirmar) cada “función” o “caso” que se va a realizar, estas son las siguiente:
+
+\begin{itemize}
+\item Arrange: Esta primera parte del caso a testear es donde se deben definir las variables o requisitos que necesita el programa para funcionar.
+\item Act: Esta parte consiste en llamar a los métodos o funciones que se desean probar del código del programa principal a testear. 
+\item Asert: En la última sección se prueba si los resultados son correctos o incorrectos. Dependiendo del resultado, si son correctos se valida y continúa con los otros casos, o se repara, no se continua hasta que el error desaparezca.
+\end{itemize}
+
+Estas partes pueden cambiar de nombre dependiendo de donde se investigue, otros nombres que reciben son Given, When, Then (Dado que, cuando, entonces).
+Para la última parte del caso (Asert o Then), si hay errores de integración es necesario investigar si se necesitan otros tipos de pruebas de software y de esta manera lograr comprobar la efectividad total del código.
+Al hacer unit testing se asegura que cada parte el código esta bien y es útil. Es importante saber que los fallos y errores son inevitables, por esto mismo los unit test no se pueden considerar como opcionales. Ya que una aplicación, sitio web, programa o código sin pruebas se puede considerar como inestable, voluble o deficiente.
+Las pruebas pueden ser desarrolladas por los desarrolladores, mismos que conocen bien el código o también en muchas empresas también las pueden realizar los responsables de QA.
+
+\section{Software a utilizar}
+
+
+\section{Programa a probar}
+
+El código al que se le realizarán pruebas será desarrollado en Python, este programa solicita al usuario que ingrese la cédula y la fecha de la persona que desea buscar, esta información se utilizará para encontrar los datos de la persona en una base de datos ya establecida. Al encontrar la información se imprime en pantalla la siguiente información: saludo, nombre completo, edad, centro de votación. La base de datos estará ubicada en el mismo archivo donde esta el programa, si este se borra o se le modifica el nombre el programa no funcionará.
+
+\section{Pruebas a realizar}
+
+Para el proyecto necesitamos saber los casos específicos que vamos a probar en nuestro software por lo que definimos los siguientes:
+
+\begin{enumerate}
+
+\item Verificar que al ingreso de la cédula solo se permitan números y no letras ni caracteres especiales.
+
+\item Verificar que se debe seleccionar que tipo de cédula es (nacional o extranjero).
+
+\item Al ingreso de la cédula nacional verificar que solo se puedan ingresar 9 dígitos.
+
+\item Al dejar algún espacio en blanco que el programa no falle, sino que muestre el error y vuelva a generar el menú.
+
+\item Comprobar la existencia del archivo de la base de datos, antes de ejecutar el programa.
+
+\item Al ingresar la edad verificar que el formato de la fecha de nacimiento sea correcto día/mes/año.
+
+\end{enumerate}
+
+
+
+%\section{Conclusiones}
+
+
+
+\normalsize
+
+\begin{thebibliography}{}
+\bibitem{Alexynior} \textsc{Alexynior} (2019). \textit{¿Qué es una prueba de regresión?.} \url{https://adictec.com/que-son-pruebas-de-regresion/}\\
+
+\bibitem{QAtesting} \textsc{The QA Testing Channel.} (2018). \textit{Pruebas de Regresión en 1 Minuto.} \url{https://www.youtube.com/watch?v=OEcIXnU6EQw} \\
+
+
+\bibitem{INTERWARE} \textsc{INTERWARE} (2018). \textit{IMPORTANCIA DE REALIZAR REGRESSION TESTING.} \url{https://www.interware.com.mx/blog/importancia-de-realizar-pruebas-de-regresi\%C3\%B3n\#:\~:text=Se\%20dice\%20que\%20una\%20regresi\%C3\%B3n,que\%20todo\%20sigue\%20funcionando\%20bien.} \\
+
+\bibitem{Isaac_Alvarez_Diz} \textsc{Isaac Álvarez Diz} (2018). \textit{¿Por qué un test de Regresión?} \url{https://qanewsblog.com/2018/01/22/por-que-un-test-de-regresion/} \\
+
+
+\bibitem{Nerio_Rodriguez} \textsc{Nerio Rodriguez} (2017). \textit{TestingBaires - Generar Script con Selenium IDE} \url{https://www.youtube.com/watch?v=_yoAoZuKF78&list=PL-a9_OKTG4ShuvHjf3EVFYERnSf915K7G&index=3} \\
+
+\bibitem{QA_Madness1} \textsc{QA Madness} (2021). \textit{Top-5 Tools for Regression Testing} \url{https://www.youtube.com/watch?v=HZvqfuADX8g} \\
+
+\bibitem{QA_Madness2} \textsc{QA Madness} (2021). \textit{Regression testing – What, Why, When, and How to Run It?} \url{https://www.youtube.com/watch?v=AWX6WvYktwk} \\
+
+\bibitem{Raghav_Pal} \textsc{Automation Step by Step - Raghav Pal} (2021). \textit{Selenium Python Small Sample Project 1 | Unit Test, HTML Reports} \url{https://www.youtube.com/watch?v=H9HUVSA_78U} \\
+
+\bibitem{TestingWhiz} \textsc{TestingWhiz} (2020). \textit{General Information} \url{https://www.testing-whiz.com/user-manual} \\
+
+\bibitem{Sahi Pro} \textsc{It'll take you more time to browse this website than to automate your test scripts using Sahi Pro} (2021). \url{https://www.sahipro.com/} \\
+
+\bibitem{Avantica} \textsc{Adriana Chavarria} (2018). \textit{Pruebas de Regresión: 6 Recomendaciones para una buena planificación} \url{http://www.avantica.com/es/blog/pruebas-de-regresion-6-recomendaciones} \\
+
+\bibitem{} \textsc{Manuel Cillero} (2021). \textit{Pruebas de Regresión} \url{https://manuel.cillero.es/doc/metodologia/metrica-3/tecnicas/pruebas/regresion/} \\
+
+\bibitem{QA:news} \textsc{ISAACALVAREZ8180} (2018). \textit{¿Por qué un test de Regresión?} \url{https://qanewsblog.com/2018/01/22/por-que-un-test-de-regresion/} \\
+
+
+
+
+\end{thebibliography}
+
+
+\end{document}
