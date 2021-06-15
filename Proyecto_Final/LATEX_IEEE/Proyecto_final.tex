@@ -32,10 +32,11 @@ urlcolor={blue}}
 % Dependencies for code blocks
 % More info in https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
 \usepackage{listings}
-\lstdefinestyle{CMD}
+
+\lstdefinestyle{CMD_small}
 {
     backgroundcolor=\color{black},
-    basicstyle=\scriptsize\color{white}\ttfamily,
+    basicstyle=\tiny\color{white}\ttfamily,
     breaklines=true,
     postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
     keywordstyle=\textcolor{red},
@@ -151,7 +152,7 @@ Se prefiere que las pruebas que utilizan el módulo unittest sigan algunas pauta
 
 \subsection{Plantilla básica para realizar unit test}
 
-\begin{lstlisting}[language=Python, breaklines=true,
+\begin{lstlisting}[language=Python,basicstyle=\scriptsize, breaklines=true,
     postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}]
 import unittest
 from test import support
@@ -193,11 +194,38 @@ El código al que se le realizarán pruebas será desarrollado en Python, este p
 
 La idea de este programa es lograr proporcionar de manera fácil información para los votantes. Ya que fácilmente pueden conocer en que región deben votar y los actuales candidatos, además de posibles candidatos a presidencia.
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{imagenes/ejemplo_programa_a_probar.jpeg}
-\caption{Ejemplo de impresión del programa a probar.}
-\end{figure}
+
+\begin{lstlisting}[style=CMD_small]
+C:\Python39\python.exe C:/git/calidad_software_proyecto/Proyecto_Final/Codigo/Votaciones.py
+Favor ingrese su cedula sin guiones y con los 0 respectivos: 117110446
+Favor ingresar su fecha de nacimiento en el formato dd/mm/yyyy: 13/06/1998
+Hola JONATHAN ANDRES
+Su nombre completo es: JONATHAN ANDRES CHAVARRIA PENA
+Su edad es: 23
+Su centro de votacion se ubica en:
+	Provincia: SAN JOSE
+	Canton: MONTES DE OCA
+	Distrito: LOURDES
+La lista de candidatos es la siguiente:
+                       Partido                  Candidato    Tipo de candidato
+0          Liberacion Nacional  Jose Maria Figueres Olsen    Candidato Oficial
+1              Nueva Republica    Fabricio Alvarado Munoz    Candidato Oficial
+3  Accesibilidad Sin Exclusion   oscar Andres Lopez Arias    Candidato Oficial
+4             Accion Ciudadana   Marcia Gonzalez Aguiluz   **Posible Candidato
+5             Accion Ciudadana  Carolina Hidalgo Herrera   **Posible Candidato
+6             Accion Ciudadana     Welmer Ramos Gonzalez   **Posible Candidato
+7             Accion Ciudadana     Hernan Solano Venegas   **Posible Candidato
+8             Accion Ciudadana     Martha Zamora Castillo  **Posible Candidato
+9        Movimiento Libertario    Carlos Valenciano Kamer    Candidato Oficial
+
+Process finished with exit code 0
+\end{lstlisting}
+
+%\begin{figure}[H]
+%\centering
+%\includegraphics[scale=0.35]{imagenes/ejemplo_programa_a_probar.jpeg}
+%\caption{Ejemplo de impresión del programa a probar.}
+%\end{figure}
 
 
 \section{Pruebas a realizar}
@@ -229,34 +257,15 @@ Para el proyecto necesitamos saber los casos específicos que vamos a probar en 
 \normalsize
 
 \begin{thebibliography}{}
-\bibitem{Alexynior} \textsc{Alexynior} (2019). \textit{¿Qué es una prueba de regresión?.} \url{https://adictec.com/que-son-pruebas-de-regresion/}\\
-
-\bibitem{QAtesting} \textsc{The QA Testing Channel.} (2018). \textit{Pruebas de Regresión en 1 Minuto.} \url{https://www.youtube.com/watch?v=OEcIXnU6EQw} \\
 
 
-\bibitem{INTERWARE} \textsc{INTERWARE} (2018). \textit{IMPORTANCIA DE REALIZAR REGRESSION TESTING.} \url{https://www.interware.com.mx/blog/importancia-de-realizar-pruebas-de-regresi\%C3\%B3n\#:\~:text=Se\%20dice\%20que\%20una\%20regresi\%C3\%B3n,que\%20todo\%20sigue\%20funcionando\%20bien.} \\
+\bibitem{Giuseppe_Vetri} \textsc{Giuseppe Vetri} (2020). \textit{Que es un unit test (Prueba unitaria).} \url{https://dev.to/codingpizza/que-es-un-unit-test-prueba-unitaria-2dnk}\\
 
-\bibitem{Isaac_Alvarez_Diz} \textsc{Isaac Álvarez Diz} (2018). \textit{¿Por qué un test de Regresión?} \url{https://qanewsblog.com/2018/01/22/por-que-un-test-de-regresion/} \\
+\bibitem{yeeply} \textsc{Yeeply.} (2021). \textit{¿Qué son las pruebas unitarias y cómo llevar una a cabo?.} \url{https://www.yeeply.com/blog/que-son-pruebas-unitarias/} \\
 
+\bibitem{Unittest} \textsc{Héctor Costa Guzmán} (2018). \textit{Unittest.} \url{https://docs.hektorprofe.net/python/documentacion-y-pruebas/unittest/} \\
 
-\bibitem{Nerio_Rodriguez} \textsc{Nerio Rodriguez} (2017). \textit{TestingBaires - Generar Script con Selenium IDE} \url{https://www.youtube.com/watch?v=_yoAoZuKF78&list=PL-a9_OKTG4ShuvHjf3EVFYERnSf915K7G&index=3} \\
-
-\bibitem{QA_Madness1} \textsc{QA Madness} (2021). \textit{Top-5 Tools for Regression Testing} \url{https://www.youtube.com/watch?v=HZvqfuADX8g} \\
-
-\bibitem{QA_Madness2} \textsc{QA Madness} (2021). \textit{Regression testing – What, Why, When, and How to Run It?} \url{https://www.youtube.com/watch?v=AWX6WvYktwk} \\
-
-\bibitem{Raghav_Pal} \textsc{Automation Step by Step - Raghav Pal} (2021). \textit{Selenium Python Small Sample Project 1 | Unit Test, HTML Reports} \url{https://www.youtube.com/watch?v=H9HUVSA_78U} \\
-
-\bibitem{TestingWhiz} \textsc{TestingWhiz} (2020). \textit{General Information} \url{https://www.testing-whiz.com/user-manual} \\
-
-\bibitem{Sahi Pro} \textsc{It'll take you more time to browse this website than to automate your test scripts using Sahi Pro} (2021). \url{https://www.sahipro.com/} \\
-
-\bibitem{Avantica} \textsc{Adriana Chavarria} (2018). \textit{Pruebas de Regresión: 6 Recomendaciones para una buena planificación} \url{http://www.avantica.com/es/blog/pruebas-de-regresion-6-recomendaciones} \\
-
-\bibitem{} \textsc{Manuel Cillero} (2021). \textit{Pruebas de Regresión} \url{https://manuel.cillero.es/doc/metodologia/metrica-3/tecnicas/pruebas/regresion/} \\
-
-\bibitem{QA:news} \textsc{ISAACALVAREZ8180} (2018). \textit{¿Por qué un test de Regresión?} \url{https://qanewsblog.com/2018/01/22/por-que-un-test-de-regresion/} \\
-
+\bibitem{m} \textsc{Python Software Foundation} (2018). \textit{Línea de comandos y entorno.} \url{https://docs.python.org/es/3.10/using/cmdline.html#cmdoption-m} \\
 
 
 
