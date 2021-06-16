@@ -50,8 +50,13 @@ class Votaciones:
         anno_actual = int(anno_actual)
         mes_actual = int(mes_actual)
         dia_actual = int(dia_actual)
-        if mes_nacimiento <= mes_actual and dia_nacimiento > dia_actual:
+        if mes_nacimiento > mes_actual:
             edad = anno_actual - anno_nacimiento - 1
+        elif mes_nacimiento == mes_actual:
+            if dia_nacimiento > dia_actual:
+                edad = anno_actual - anno_nacimiento - 1
+            else:
+                edad = anno_actual - anno_nacimiento
         else:
             edad = anno_actual - anno_nacimiento
         return edad
