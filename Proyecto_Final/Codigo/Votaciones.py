@@ -22,6 +22,8 @@ class Votaciones:
         df = df[~(df.Candidato.str.contains(r"\d") | df.Candidato.str.contains(r"TSE"))]
         df["Candidato"] = df["Candidato"].str.replace("*", "", regex=True)
         df["Candidato"] = df["Candidato"].str.replace("†", "", regex=True)
+        df["Candidato"] = df["Candidato"].str.replace("‡", "", regex=True)
+        df["Candidato"] = df["Candidato"].str.replace("Δ", "", regex=True)
         df["Oficial"] = df.duplicated(subset=["Partido"], keep=False)
         df["Tipo de candidato"] = np.where(df["Oficial"], "**Posible Candidato", "Candidato Oficial")
         return df[["Partido", "Candidato", "Tipo de candidato"]].to_string()
