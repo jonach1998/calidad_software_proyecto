@@ -128,6 +128,7 @@ Las pruebas pueden ser desarrolladas por los desarrolladores, mismos que conocen
 
 El software a utilizar en la presente investigación es Python -m unittes, es el módulo unittest, este ofrece la posibilidad de crear las pruebas implementando una clase llamada unittest.TestCase en la que se incluirán métodos de pruebas. Tales como los siguientes: 
 
+\section*{\textbf{Arreglar esta tabla, no screenshots}}
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.45]{imagenes/metodos_-m.pdf}
@@ -234,17 +235,29 @@ Para el proyecto necesitamos saber los casos específicos que vamos a probar en 
 
 \begin{enumerate}
 
-\item Verificar que al ingreso de la cédula solo se permitan números y no letras ni caracteres especiales.
+\item Probar el caso en el que todo salga bien
 
-\item Verificar que se debe seleccionar que tipo de cédula es (nacional o extranjero).
+\item Probar si la base de datos "Distelec.txt" tiene un formato incorrecto
 
-\item Al ingreso de la cédula nacional verificar que solo se puedan ingresar 9 dígitos.
+\item Probar si la base de datos "PADRON\_COMPLETO.txt" tiene un formato incorrecto
 
-\item Al dejar algún espacio en blanco que el programa no falle, sino que muestre el error y vuelva a generar el menú.
+\item Probar si se ingresa la cédula con letras o caracteres especiales.
 
-\item Comprobar la existencia del archivo de la base de datos, antes de ejecutar el programa.
+\item Probar si no se encuentra una cedula en la base de datos
 
-\item Al ingresar la edad verificar que el formato de la fecha de nacimiento sea correcto día/mes/año.
+\item Probar si se deja alguno de los datos solicitados en blanco
+
+\item Probar si no existe el archivo de la base de datos "Distelec.txt"
+
+\item Probar si no existe el archivo de la base de datos "PADRON\_COMPLETO.txt"
+
+\item Probar si la edad se ingreso en el formato correcto (prueba puede ser: mm/dd/yyyy)
+
+\item Probar si la edad contiene letras o caracteres especiales
+
+\item Probar si la pagina es incorrecta 
+
+\item Probar si la pagina no se encuentra
 
 \end{enumerate}
 
