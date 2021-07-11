@@ -266,26 +266,83 @@ Para el proyecto necesitamos saber los casos específicos que vamos a probar en 
 
 Caso 1
 \begin{itemize}
-\item Nombre/Identificador: Usuario y contraseña correctos
-\item Descripcion: El usuario digita bien el usuario y la contraseña
-\item Objetivo de la prueba: Comprobar seguridad de validación de usuario
-\item Requerimientos o precondiciones: Contar anteriormente con un usuario y contraseña
+\item Nombre/Identificador: Probar el caso en el que todo salga bien.
+\item Descripción: El usuario digita bien toda la información.
+\item Objetivo de la prueba: Comprobar el buen funcionamiento del programa.
+\item Requerimientos o precondiciones: Estar incluido en la lista de votantes del país.
 \item Pasos a seguir: 
 \begin{enumerate}
-\item Escribir el usuario correcto, en el espacio correspondiente
-\item Escribir la contraseña correcta, en el espacio correspondiente
+\item Escribir la cédula, en el espacio correspondiente.
+\item Escribir la fecha de nacimiento, en el espacio correspondiente.
 \end{enumerate}
-
-\item Resultados esperados: Inicio de sesión correcto
+\item Resultados esperados: Despliegue de toda la información solicitada.
 \item Prioridad: Alta
-\item Datos a utilizar:
+\item Datos a utilizar: 
 \begin{itemize}
-\item Usuario: Carlos01
-\item Contraseña: 12345
+\item Cedula: 000000000
+\item Fecha de nacimiento: 00/00/00
 \end{itemize}
 \item Tipo de prueba: Funcional
 \end{itemize}
 
+Caso 2
+\begin{itemize}
+\item Nombre/Identificador: Probar si la base de datos "Distelec.txt" tiene un formato incorrecto.
+\item Descripción: Verificar que el archivo Distelec este separado por otro carácter que no sea comas.
+\item Objetivo de la prueba: Comprobar que el programa falle cuando el archivo no esta separado por comas. 
+\item Requerimientos o pre condiciones: Archivo en el formato incorrecto.
+\item Pasos a seguir: 
+\begin{enumerate}
+\item Buscar el archivo "Distelec.txt" en la carpeta donde esta el programa.
+\item Separar la información del archivo, utilizando como referencia la "," para separar.
+\end{enumerate}
+\item Resultados esperados: No se pueda correr el programa.
+\item Prioridad: Alta
+\item Datos a utilizar: 
+\begin{itemize}
+\item Archivo: "Distelec.txt"
+\end{itemize}
+\item Tipo de prueba: Funcional
+\end{itemize}
+
+Caso 3
+\begin{itemize}
+\item Nombre/Identificador: Probar si la base de datos "PADRON\_COMPLETO.txt" tiene un formato incorrecto.
+\item Descripción: Verificar que el archivo PADRON\_COMPLETO este separado por otro carácter que no sea comas.
+\item Objetivo de la prueba: Comprobar que el programa falle cuando el archivo no esta separado por comas. 
+\item Requerimientos o pre condiciones: Archivo en el formato incorrecto.
+\item Pasos a seguir: 
+\begin{enumerate}
+\item Buscar el archivo "PADRON\_COMPLETO.txt" en la carpeta donde esta el programa.
+\item Separar la información del archivo, utilizando como referencia la "," para separar.
+\end{enumerate}
+\item Resultados esperados: No se pueda correr el programa.
+\item Prioridad: Alta
+\item Datos a utilizar: 
+\begin{itemize}
+\item Archivo: "PADRON\_COMPLETO.txt"
+\end{itemize}
+\item Tipo de prueba: Funcional
+\end{itemize}
+
+Caso 4
+\begin{itemize}
+\item Nombre/Identificador: Probar si se ingresa la cédula con letras o caracteres especiales.
+\item Descripción: El usuario digita la cédula utilizando letras o caracteres especiales.
+\item Objetivo de la prueba: No poder correr el programa.
+\item Requerimientos o pre condiciones: No hay.
+\item Pasos a seguir: 
+\begin{enumerate}
+\item Escribir la cédula conteniendo letras o caracteres especiales, en el espacio correspondiente.
+\end{enumerate}
+\item Resultados esperados: No corra el programa.
+\item Prioridad: Alta
+\item Datos a utilizar: 
+\begin{itemize}
+\item Cedula: 0x000/000
+\end{itemize}
+\item Tipo de prueba: Funcional
+\end{itemize}
 %\section{Conclusiones}
 
 
