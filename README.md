@@ -17,7 +17,9 @@ El documento con toda la informacion sobre los requisitos del proyecto es: Proye
   - [ ] Tests 5-8 [Daniel]
   - [ ] Tests 9-12 [Edmond]
 - [ ] Completar el test plan [Jonathan]
-  - [ ] Reunion para completarlo
+  - [ ] Edmon caso 9 - 10
+  - [ ] Valeria caso 11
+  - [ ] Jonathan todos los demás.
 
 ### Avance 3
 - [ ] Tener segundo tema relacionado (???)
