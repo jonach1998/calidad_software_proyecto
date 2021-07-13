@@ -296,7 +296,7 @@ Para el proyecto necesitamos saber los casos específicos que vamos a probar en 
 
 \subsection{Caso 1}
 \begin{itemize}
-\item Nombre/Identificador: Probar el caso en el que todo salga bien.
+\item Nombre/Identificador: Todo sale bien.
 \item Descripción: El usuario digita bien toda la información.
 \item Objetivo de la prueba: Comprobar el buen funcionamiento del programa.
 \item Requerimientos o precondiciones: Estar incluido en la lista de votantes del país.
@@ -307,17 +307,12 @@ Para el proyecto necesitamos saber los casos específicos que vamos a probar en 
 \end{enumerate}
 \item Resultados esperados: Despliegue de toda la información solicitada.
 \item Prioridad: Alta
-\item Datos a utilizar: 
-\begin{itemize}
-\item Cedula: 000000000
-\item Fecha de nacimiento: 00/00/00
-\end{itemize}
 \item Tipo de prueba: Funcional
 \end{itemize}
 
 \subsection{Caso 2}
 \begin{itemize}
-\item Nombre/Identificador: Probar si la base de datos "Distelec.txt" tiene un formato incorrecto.
+\item Nombre/Identificador: "Distelec.txt" formato incorrecto.
 \item Descripción: Verificar que el archivo Distelec este separado por otro carácter que no sea comas.
 \item Objetivo de la prueba: Comprobar que el programa falle cuando el archivo no esta separado por comas. 
 \item Requerimientos o pre condiciones: Archivo en el formato incorrecto.
@@ -357,7 +352,7 @@ Para el proyecto necesitamos saber los casos específicos que vamos a probar en 
 
 \subsection{Caso 4}
 \begin{itemize}
-\item Nombre/Identificador: Probar si se ingresa la cédula con letras o caracteres especiales.
+\item Nombre/Identificador: Cédula con letras o caracteres especiales.
 \item Descripción: El usuario digita la cédula utilizando letras o caracteres especiales.
 \item Objetivo de la prueba: No poder correr el programa.
 \item Requerimientos o pre condiciones: No hay.
@@ -446,15 +441,15 @@ Para el proyecto necesitamos saber los casos específicos que vamos a probar en 
 
 \subsection{Caso 9}
 \begin{itemize}
-\item Nombre: Formato edad correcto 
-\item Descripción: Probar si la edad se ingresó en el formato correcto (prueba puede ser: mm/dd/yyyy)
-\item Objetivo de la prueba: verificar que la edad se ingreso en el formato deseado 
+\item Nombre: Formato edad incorrecto 
+\item Descripción: Probar si la edad se ingresó en el formato incorrecto
+\item Objetivo de la prueba: verificar que la edad no se ingreso en el formato deseado 
 \item Requerimientos: Ingresar fecha de nacimiento, base de datos 
 \item Pasos por seguir: 
 \begin{enumerate}
-\item Ingresar la fecha de nacimiento, el sistema debería de seguir funcionando correctamente y verifica que el formato era el deseado.
+\item Ingresar la fecha de nacimiento en formato incorrecto
 \end{enumerate}
-\item Resultados esperados: Al ingresar la fecha de nacimiento se espera que lo ingrese en el formato correcto (mm/dd/yyyy) para no ocasionar errores.
+\item Resultados esperados: 
 \item Prioridad: Alta
 \end{itemize}
 
