@@ -174,6 +174,16 @@ La lista de candidatos es la siguiente:
         with self.assertRaises(ValueError):
             self._target.run()
 
+    # Caso 11
+    @mock.patch("Proyecto_Final.Codigo.Votaciones.input")
+    @mock.patch("Proyecto_Final.Codigo.Votaciones.open")
+    def test_pagina_incorrecta(self, mock_open, mock_input):
+        target = Votaciones("dummy", "dummy", "https://es.wikipedia.org/wiki/Elecciones_generales_de_Costa_Rica_de_3022")
+        mock_open.side_effect = [self._distelec_return, self._padron_return]
+        mock_input.side_effect = ["100842598", "13/06/1998"]
+        with self.assertRaises(IndexError):
+            target.run()
+
     # Caso 12
     @mock.patch("Proyecto_Final.Codigo.Votaciones.input")
     @mock.patch("Proyecto_Final.Codigo.Votaciones.open")
