@@ -11,15 +11,14 @@ El documento con toda la informacion sobre los requisitos del proyecto es: Proye
 - [x] Descripcion del software a probar
 
 ### Avance 2
-- [ ] Documento de casos de prueba (12 tests)
-  - [ ] Utilizar la plantilla de casos hecha en Latex que va a brindar Jonathan
-  - [ ] Tests 1-4 [Morales]
-  - [ ] Tests 5-8 [Daniel]
-  - [ ] Tests 9-12 [Edmond]
-- [ ] Completar el test plan [Jonathan]
-  - [ ] Edmon caso 9 - 10
-  - [ ] Valeria caso 11
-  - [ ] Jonathan todos los demás.
+- [x] Documento de casos de prueba (12 tests)
+  - [x] Utilizar la plantilla de casos hecha en Latex que va a brindar Jonathan
+  - [x] Tests 1-4 [Morales]
+  - [x] Tests 5-8 [Daniel]
+  - [x] Tests 9-12 [Edmond]
+- [x] Completar el test plan [Jonathan]
+  - [x] Valeria caso 11
+  - [x] Jonathan todos los demás.
 
 ### Avance 3
 - [ ] Tener segundo tema relacionado (???)
