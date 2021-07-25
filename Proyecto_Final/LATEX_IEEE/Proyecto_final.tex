@@ -1,7 +1,7 @@
  \documentclass[conference]{IEEEtran}
 \usepackage[utf8]{inputenc}
 \usepackage{textcomp}
-\usepackage[spanish]{babel}
+\usepackage[spanish, english]{babel}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -20,6 +20,12 @@
 \usepackage{karnaugh-map}
 \usepackage{adjustbox}
 \usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
+
+% Command to enable keywords EN
+\providecommand{\keywordsen}[1]{\textbf{\textit{Keywords---}} #1}
+
+% Command to enable keywords ES
+\providecommand{\keywordses}[1]{\textbf{\textit{Palabras clave---}} #1}
 
 %Habilita bookmarks en PDF
 \newcommand\MYhyperrefoptions{bookmarks=true,bookmarksnumbered=true,
@@ -97,13 +103,19 @@ urlcolor={blue}}
 %\thispagestyle{plain}
 %\pagestyle{plain}
 
-%\begin{abstract}
+\selectlanguage{spanish}
+\begin{abstract}
+Abstract
+\end{abstract}
 
-	
-%\end{abstract}
+\selectlanguage{english}
+\begin{abstract}
+Abstract
+\end{abstract}
 
+\keywordsen{one, two, three, four}
 
-\section{DESARROLLO}
+\keywordses{uno, dos, tres, cuatro}
 
 \section{Investigación de la tecnología}
 
@@ -253,6 +265,9 @@ Para el proyecto necesitamos saber los casos específicos que vamos a probar en 
 \item Probar si la pagina no se encuentra
 
 \end{enumerate}
+
+\section{Plan de pruebas}
+
 
 
 \section{Casos de prueba}
