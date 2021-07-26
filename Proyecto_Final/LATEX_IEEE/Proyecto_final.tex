@@ -21,6 +21,10 @@
 \usepackage{adjustbox}
 \usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
 
+% Dependencies to reduce size tables
+\usepackage{adjustbox}
+% Dependencies to reduce size tables
+
 % Command to enable keywords EN
 \providecommand{\keywordsen}[1]{\textbf{\textit{Keywords---}} #1}
 
@@ -268,7 +272,31 @@ Para el proyecto necesitamos saber los casos específicos que vamos a probar en 
 
 \section{Plan de pruebas}
 
-
+\begin{adjustbox}{width=0.5\textwidth}
+\begin{tabular}{|c|c|c|}
+\hline 
+\multicolumn{2}{|c|}{Requerimientos de desarrollo} & • \\ 
+\hline 
+\multicolumn{2}{|c|}{Funcionalidades nuevas} & • \\ 
+\hline 
+\multicolumn{2}{|c|}{Funcionalidades existentes} & • \\ 
+\hline 
+\multicolumn{2}{|c|}{Estrategia de pruebas} & • \\ 
+\hline 
+\multicolumn{3}{|c|}{Pruebas funcionales} \\ 
+\hline 
+\multicolumn{3}{|c|}{Pruebas no funcionales} \\ 
+\hline 
+Criterios de inicio & Criterios de suspension & Criterios de aceptación \\ 
+\hline 
+\multicolumn{2}{|c|}{Entornos y ambientes} & • \\ 
+\hline 
+\multicolumn{2}{|c|}{Necesidades} & • \\ 
+\hline 
+\multicolumn{2}{|c|}{Metodologia} & • \\ 
+\hline 
+\end{tabular} 
+\end{adjustbox}
 
 \section{Casos de prueba}
 
@@ -441,7 +469,6 @@ Para el proyecto necesitamos saber los casos específicos que vamos a probar en 
 \item Prioridad: Muy alta. 
 \end{itemize}
 
-\newpage
 \section{Pruebas Unitarias}
 
 \begin{lstlisting}[language=Python, basicstyle=\tiny, breaklines=true,
