@@ -143,7 +143,7 @@ Las pruebas pueden ser desarrolladas por los desarrolladores, mismos que conocen
 
 \section{Software a utilizar}
 
-El software a utilizar en la presente investigación es Python -m unittes, es el módulo unittest, este ofrece la posibilidad de crear las pruebas implementando una clase llamada unittest.TestCase en la que se incluirán métodos de pruebas. Tales como los siguientes: 
+El software a utilizar en la presente investigación es Python -m unittest, es el módulo unittest, este ofrece la posibilidad de crear las pruebas implementando una clase llamada unittest.TestCase en la que se incluirán métodos de pruebas. Tales como los siguientes: 
 
 El modulo de unit test de python permite utilizar distintos contenedores al realizar pruebas unitarias, como por ejemplo: list, dict y set.
 
@@ -276,32 +276,72 @@ Para el proyecto necesitamos saber los casos específicos que vamos a probar en 
 \begin{adjustbox}{width=0.5\textwidth}
 \begin{tabular}{|c|c|c|}
 \hline 
-\multicolumn{2}{|c|}{Requerimientos de desarrollo} & • \\ 
+\multicolumn{2}{|c|}{Requerimientos de desarrollo} & \begin{tabular}[c]{@{}l@{}}
+• Modulo unittest de Python\\
+• Pycharm
+\end{tabular} \\
 \hline 
-\multicolumn{2}{|c|}{Funcionalidades nuevas} & • \\ 
+\multicolumn{2}{|c|}{Funcionalidades nuevas} & No hay funcionalidades nuevas \\ 
 \hline 
-\multicolumn{2}{|c|}{Funcionalidades existentes} & • \\ 
+\multicolumn{2}{|c|}{Funcionalidades existentes} & \begin{tabular}[c]{@{}l@{}}
+• Mostrar datos del usuario incluyendo nombre, apellidos, edad y centro de votación\\
+• Mostrar lista de actuales candidatos a presidencia con su partido respectivo\\
+\end{tabular} \\
 \hline 
-\multicolumn{2}{|c|}{Estrategia de pruebas} & • \\ 
+\multicolumn{2}{|c|}{Estrategia de pruebas} & \begin{tabular}[c]{@{}l@{}}
+Verificar el resultado de cada prueba con lo esperado: \\
+\indent • Si el caso pasa la prueba \\
+\indent • Si falla por una excepción esperada\\ 
+\indent • Si devuelve valores incorrectos\\ 
+\end{tabular} \\
+
 \hline 
-\multicolumn{3}{|c|}{Pruebas funcionales} \\ 
+\multicolumn{2}{|c|}{Pruebas funcionales} & \begin{tabular}[c]{@{}l@{}}
+• Todo sale bien\\
+• Cédula con letras o caracteres especiales \\
+• Fecha nacimiento vacía\\ 
+• Formato fecha nacimiento incorrecto\\ 
+• Fecha nacimiento caracteres especiales no esperados\\  
+\end{tabular} \\
 \hline 
-\multicolumn{3}{|c|}{Pruebas no funcionales} \\ 
+\multicolumn{2}{|c|}{Pruebas no funcionales} & \begin{tabular}[c]{@{}l@{}}
+• ``Distelec.txt" formato incorrecto\\
+• ``PADRON COMPLETO.txt" formato incorrecto\\
+• Cédula no encontrada\\
+• ``Distelec.txt" no existe\\ 
+• ``PADRON COMPLETO.txt" no existe\\ 
+• Pagina incorrecta\\ 
+• Pagina no existe\\ 
+\end{tabular} \\
 \hline 
-Criterios de inicio & Criterios de suspension & Criterios de aceptación \\ 
+Criterios de inicio & Criterios de suspensión & Criterios de aceptación \\ 
 \hline 
-\multicolumn{2}{|c|}{Entornos y ambientes} & • \\ 
+\begin{tabular}[c]{@{}l@{}}
+El codigo del producto\\
+debe de estar listo \\ 
+(Producto final para producción)
+\end{tabular}
+ & 
+\begin{tabular}[c]{@{}l@{}}
+Se suspende si el tipo de fallo \\ no coincide con el esperado\\
+\end{tabular} 
+& \begin{tabular}[c]{@{}l@{}}
+Se considera aceptado si el 100\% de los unit test tienen PASS. \\Si existen tests que fallaban, y ya no fallan, se consideran también \\ como aceptados, pero se debe modificar el unit test para que ya no falle\\
+\end{tabular} \\
 \hline 
-\multicolumn{2}{|c|}{Necesidades} & • \\ 
+\multicolumn{2}{|c|}{Entornos y ambientes} & \begin{tabular}[c]{@{}l@{}}
+• Python\\
+• Pycharm
+\end{tabular} \\
 \hline 
-\multicolumn{2}{|c|}{Metodologia} & • \\ 
-\hline 
+%\multicolumn{2}{|c|}{Necesidades} & • \\ 
+%\hline 
 \end{tabular} 
 \end{adjustbox}
 
 \section{Casos de prueba}
 
-\subsection{Caso 1}
+\subsection*{Caso 1}
 \begin{itemize}
 \item Nombre/Identificador: Todo sale bien.
 \item Descripción: El usuario digita bien toda la información.
@@ -316,37 +356,37 @@ Criterios de inicio & Criterios de suspension & Criterios de aceptación \\
 \item Prioridad: Alta.
 \end{itemize}
 
-\subsection{Caso 2}
+\subsection*{Caso 2}
 \begin{itemize}
-\item Nombre/Identificador: "Distelec.txt" formato incorrecto.
+\item Nombre/Identificador: ``Distelec.txt" formato incorrecto.
 \item Descripción: Verificar que el archivo Distelec este separado por otro carácter que no sea comas.
 \item Objetivo de la prueba: Comprobar que el programa falle cuando el archivo no esta separado por comas. 
 \item Requerimientos o pre condiciones: Archivo en el formato incorrecto.
 \item Pasos a seguir: 
 \begin{enumerate}
-\item Buscar el archivo "Distelec.txt" en la carpeta donde esta el programa.
+\item Buscar el archivo ``Distelec.txt" en la carpeta donde esta el programa.
 \item Separar la información del archivo, utilizando como referencia la "," para separar.
 \end{enumerate}
 \item Resultados esperados: No se pueda correr el programa.
 \item Prioridad: Alta
 \end{itemize}
 
-\subsection{Caso 3}
+\subsection*{Caso 3}
 \begin{itemize}
-\item Nombre/Identificador: "PADRON\_COMPLETO.txt" formato incorrecto.
+\item Nombre/Identificador: ``PADRON\_COMPLETO.txt" formato incorrecto.
 \item Descripción: Verificar que el archivo PADRON\_COMPLETO este separado por otro carácter que no sea comas.
 \item Objetivo de la prueba: Comprobar que el programa falle cuando el archivo no esta separado por comas. 
 \item Requerimientos o pre condiciones: Archivo en el formato incorrecto.
 \item Pasos a seguir: 
 \begin{enumerate}
-\item Buscar el archivo "PADRON\_COMPLETO.txt" en la carpeta donde esta el programa.
+\item Buscar el archivo ``PADRON\_COMPLETO.txt" en la carpeta donde esta el programa.
 \item Separar la información del archivo, utilizando como referencia la "," para separar.
 \end{enumerate}
 \item Resultados esperados: No se pueda correr el programa.
 \item Prioridad: Alta
 \end{itemize}
 
-\subsection{Caso 4}
+\subsection*{Caso 4}
 \begin{itemize}
 \item Nombre/Identificador: Cédula con letras o caracteres especiales.
 \item Descripción: El usuario digita la cédula utilizando letras o caracteres especiales.
@@ -360,7 +400,7 @@ Criterios de inicio & Criterios de suspension & Criterios de aceptación \\
 \item Prioridad: Alta
 \end{itemize}
 
-\subsection{Caso 5}
+\subsection*{Caso 5}
 \begin{itemize}
 \item Nombre: Cédula no encontrada.
 \item Descripción: Probar si no se encuentra una cédula en la base de datos.
@@ -375,7 +415,7 @@ Criterios de inicio & Criterios de suspension & Criterios de aceptación \\
 
 \end{itemize}
 
-\subsection{Caso 6}
+\subsection*{Caso 6}
 \begin{itemize}
 \item Nombre: Fecha nacimiento vacío. 
 \item Descripción: Probar si se deja alguno de los datos solicitados en blanco.
@@ -389,10 +429,10 @@ Criterios de inicio & Criterios de suspension & Criterios de aceptación \\
 \item Prioridad: Alta.
 \end{itemize}
 
-\subsection{Caso 7}
+\subsection*{Caso 7}
 \begin{itemize}
-\item Nombre: "Distelec.txt"  no existe. 
-\item Descripción: Probar si no existe el archivo de la base de datos "Distelec.txt".
+\item Nombre: ``Distelec.txt"  no existe. 
+\item Descripción: Probar si no existe el archivo de la base de datos ``Distelec.txt".
 \item Objetivo de la prueba: Ver si no existe el archivo "Distelec.txt" de la base de datos que sucede con el programa.
 \item Requerimientos: Documento "Distelec.txt".
 \item Pasos a seguir: 
@@ -403,21 +443,21 @@ Criterios de inicio & Criterios de suspension & Criterios de aceptación \\
 \item Prioridad: Muy alta.
 \end{itemize}
 
-\subsection{Caso 8}
+\subsection*{Caso 8}
 \begin{itemize}
-\item Nombre: "PADRON\_COMPLETO.txt"  no existe.
-\item Descripción: Probar si no existe el archivo de la base de datos "PADRON\_COMPLETO.txt".
-\item Objetivo de la prueba: Verificar lo que sucede si no se encuentra en el programa el archivo de la base de datos "PADRON\_COMPLETO.txt".
-\item Requerimientos: Documento "PADRON\_COMPLETO.txt".
+\item Nombre: ``PADRON\_COMPLETO.txt"  no existe.
+\item Descripción: Probar si no existe el archivo de la base de datos ``PADRON\_COMPLETO.txt".
+\item Objetivo de la prueba: Verificar lo que sucede si no se encuentra en el programa el archivo de la base de datos ``PADRON\_COMPLETO.txt".
+\item Requerimientos: Documento ``PADRON\_COMPLETO.txt".
 \item Pasos a seguir:
 \begin{enumerate}
-\item Ejecutar el programa y ver que sucede si no se encuentra el archivo "PADRON\_COMPLETO.txt".
+\item Ejecutar el programa y ver que sucede si no se encuentra el archivo ``PADRON\_COMPLETO.txt".
 \end{enumerate}
-\item Resultados esperados: Al no encontrar el archivo "PADRON\_COMPLETO.txt" no dejar continuar con el programa e indicar el error con un mensaje. 
+\item Resultados esperados: Al no encontrar el archivo ``PADRON\_COMPLETO.txt" no dejar continuar con el programa e indicar el error con un mensaje. 
 \item Prioridad: Muy alta. 
 \end{itemize}
 
-\subsection{Caso 9}
+\subsection*{Caso 9}
 \begin{itemize}
 \item Nombre: Formato fecha nacimiento incorrecto. 
 \item Descripción: Probar si la edad se ingresó en el formato incorrecto.
@@ -431,7 +471,7 @@ Criterios de inicio & Criterios de suspension & Criterios de aceptación \\
 \item Prioridad: Alta.
 \end{itemize}
 
-\subsection{Caso 10}
+\subsection*{Caso 10}
 \begin{itemize}
 \item Nombre: Fecha nacimiento caracteres especiales no esperados.
 \item Descripción: \item Probar si la edad contiene letras o caracteres especiales.
@@ -445,7 +485,7 @@ Criterios de inicio & Criterios de suspension & Criterios de aceptación \\
 \item Prioridad: Media
 \end{itemize}
 
-\subsection{Caso 11}
+\subsection*{Caso 11}
 \begin{itemize}
 \item Nombre: Página incorrecta
 \item Descripción: Probar si la página es incorrecta
@@ -456,7 +496,7 @@ Criterios de inicio & Criterios de suspension & Criterios de aceptación \\
 \item Prioridad: Muy alta.
 \end{itemize}
 
-\subsection{Caso 12}
+\subsection*{Caso 12}
 \begin{itemize}
 \item Nombre: Pagina no existe.
 \item Descripción: Probar si la página no se encuentra.
