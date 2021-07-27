@@ -352,7 +352,7 @@ Se considera aceptado si el 100\% de los unit test tienen PASS. \\Si existen tes
 \item Escribir la cédula, en el espacio correspondiente.
 \item Escribir la fecha de nacimiento, en el espacio correspondiente.
 \end{enumerate}
-\item Resultados esperados: Despliegue de toda la información solicitada.
+\item Resultados esperados: Despliegue de toda la información solicitada correcta.
 \item Prioridad: Alta.
 \end{itemize}
 
@@ -367,7 +367,7 @@ Se considera aceptado si el 100\% de los unit test tienen PASS. \\Si existen tes
 \item Buscar el archivo ``Distelec.txt" en la carpeta donde esta el programa.
 \item Separar la información del archivo, utilizando como referencia la "," para separar.
 \end{enumerate}
-\item Resultados esperados: No se pueda correr el programa.
+\item Resultados esperados: El programa deja de funcionar y se cierra abruptamente, se quiebra. Exception: KeyError.
 \item Prioridad: Alta
 \end{itemize}
 
@@ -382,7 +382,7 @@ Se considera aceptado si el 100\% de los unit test tienen PASS. \\Si existen tes
 \item Buscar el archivo ``PADRON\_COMPLETO.txt" en la carpeta donde esta el programa.
 \item Separar la información del archivo, utilizando como referencia la "," para separar.
 \end{enumerate}
-\item Resultados esperados: No se pueda correr el programa.
+\item Resultados esperados: El programa deja de funcionar y se cierra abruptamente, se quiebra. Exception: ValueError.
 \item Prioridad: Alta
 \end{itemize}
 
@@ -396,7 +396,7 @@ Se considera aceptado si el 100\% de los unit test tienen PASS. \\Si existen tes
 \begin{enumerate}
 \item Escribir la cédula conteniendo letras o caracteres especiales, en el espacio correspondiente.
 \end{enumerate}
-\item Resultados esperados: No corra el programa.
+\item Resultados esperados: El programa deja de funcionar y se cierra abruptamente, se quiebra. Exception: KeyError.
 \item Prioridad: Alta
 \end{itemize}
 
@@ -410,7 +410,7 @@ Se considera aceptado si el 100\% de los unit test tienen PASS. \\Si existen tes
 \begin{enumerate}
 \item Ingresar una cédula en el campo correspondiente y ver el resultado. 
 \end{enumerate}
-\item Resultados esperados: Al ingresar la cédula no existente en la base de datos dar un mensaje de advertencia y no dejar continuar. 
+\item Resultados esperados: El programa deja de funcionar y se cierra abruptamente, se quiebra. Exception: KeyError.
 \item Prioridad: Alta.
 
 \end{itemize}
@@ -425,7 +425,7 @@ Se considera aceptado si el 100\% de los unit test tienen PASS. \\Si existen tes
 \begin{enumerate}
 \item Ingresar los datos y probar dejando algunos espacios en blanco para ver el resultado
 \end{enumerate}
-\item Resultados esperados: Al dejar uno o varios espacios en blanco el sistema da un mensaje de advertencia y no lo se puede continuar.
+\item Resultados esperados: El programa deja de funcionar y se cierra abruptamente, se quiebra. Exception: ValueError.
 \item Prioridad: Alta.
 \end{itemize}
 
@@ -439,7 +439,7 @@ Se considera aceptado si el 100\% de los unit test tienen PASS. \\Si existen tes
 \begin{enumerate}
 \item Verificar la existencia o no del archivo "Distelec.txt" en la base de datos y ejecutar el programa. 
 \end{enumerate} 
-\item Resultados esperados: Al no encontrar el archivo de base de datos "Distelec.txt" no dejar continuar e indicarlo con un mensaje para continuar con el programa.
+\item Resultados esperados: El programa deja de funcionar y se cierra abruptamente, se quiebra. Exception: FileNotFoundError.
 \item Prioridad: Muy alta.
 \end{itemize}
 
@@ -453,7 +453,7 @@ Se considera aceptado si el 100\% de los unit test tienen PASS. \\Si existen tes
 \begin{enumerate}
 \item Ejecutar el programa y ver que sucede si no se encuentra el archivo ``PADRON\_COMPLETO.txt".
 \end{enumerate}
-\item Resultados esperados: Al no encontrar el archivo ``PADRON\_COMPLETO.txt" no dejar continuar con el programa e indicar el error con un mensaje. 
+\item Resultados esperados: El programa deja de funcionar y se cierra abruptamente, se quiebra. Exception: FileNotFoundError.
 \item Prioridad: Muy alta. 
 \end{itemize}
 
@@ -467,7 +467,7 @@ Se considera aceptado si el 100\% de los unit test tienen PASS. \\Si existen tes
 \begin{enumerate}
 \item Ingresar la fecha de nacimiento en formato incorrecto.
 \end{enumerate}
-\item Resultados esperados: 
+\item Resultados esperados: El programa continua, finaliza, sin embargo, despliega la edad incorrecta.
 \item Prioridad: Alta.
 \end{itemize}
 
@@ -481,7 +481,7 @@ Se considera aceptado si el 100\% de los unit test tienen PASS. \\Si existen tes
 \begin{enumerate}
 \item Ingresar la edad en el sistema con letras o caracteres especiales y comprobar que sucede.
 \end{enumerate}
-\item Resultados esperados: Al ingresar letras o caracteres incorrectos el sistema debe de mostrar un mensaje de error que ingrese la edad solo con números.
+\item Resultados esperados: El programa deja de funcionar y se cierra abruptamente, se quiebra. Exception: ValueError.
 \item Prioridad: Media
 \end{itemize}
 
@@ -492,7 +492,7 @@ Se considera aceptado si el 100\% de los unit test tienen PASS. \\Si existen tes
 \item Objetivo de la prueba: Ver que sucede al ingresar a una página incorrecta.
 \item Requerimientos: Página incorrecta.
 \item Pasos por seguir: Confirmar que sucede si se ingresa a una pagina incorrecta.
-\item Resultados esperados: Al no encontrar la página correcta debe de mostrar un mensaje de error diciendo que esta página es incorrecta.
+\item Resultados esperados: El programa deja de funcionar y se cierra abruptamente, se quiebra. Exception: IndexError.
 \item Prioridad: Muy alta.
 \end{itemize}
 
@@ -506,7 +506,7 @@ Se considera aceptado si el 100\% de los unit test tienen PASS. \\Si existen tes
 \begin{enumerate}
 \item Ejecutar el programa y ver que sucede si no encuentra la dirección de la página correcta.
 \end{enumerate}
-\item Resultados esperados: Al no encontrar la página debería de dar un mensaje de error y no dejar continuar el programa.
+\item Resultados esperados: El programa deja de funcionar y se cierra abruptamente, se quiebra. Exception: requests.exceptions.MissingSchema.
 \item Prioridad: Muy alta. 
 \end{itemize}
 
