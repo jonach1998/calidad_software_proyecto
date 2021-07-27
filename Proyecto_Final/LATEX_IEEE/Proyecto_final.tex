@@ -340,7 +340,7 @@ Se considera aceptado si el 100\% de los unit test tienen PASS. \\Si existen tes
 \end{adjustbox}
 
 \section{Casos de prueba}
-
+\subsection{Pruebas Funcionales}
 \subsection*{Caso 1}
 \begin{itemize}
 \item Nombre/Identificador: Todo sale bien.
@@ -355,8 +355,61 @@ Se considera aceptado si el 100\% de los unit test tienen PASS. \\Si existen tes
 \item Resultados esperados: Despliegue de toda la información solicitada correcta.
 \item Prioridad: Alta.
 \end{itemize}
-
 \subsection*{Caso 2}
+\begin{itemize}
+\item Nombre/Identificador: Cédula con letras o caracteres especiales.
+\item Descripción: El usuario digita la cédula utilizando letras o caracteres especiales.
+\item Objetivo de la prueba: No poder correr el programa.
+\item Requerimientos o pre condiciones: No hay.
+\item Pasos a seguir: 
+\begin{enumerate}
+\item Escribir la cédula conteniendo letras o caracteres especiales, en el espacio correspondiente.
+\end{enumerate}
+\item Resultados esperados: El programa deja de funcionar y se cierra abruptamente, se quiebra. Exception: KeyError.
+\item Prioridad: Alta
+\end{itemize}
+\subsection*{Caso 3}
+\begin{itemize}
+\item Nombre: Fecha nacimiento vacío. 
+\item Descripción: Probar si se deja alguno de los datos solicitados en blanco.
+\item Objetivo de la prueba: Ver el resultado si se deja uno de los datos solicitados en blanco. 
+\item Requerimientos: Base de datos. 
+\item Pasos a seguir:
+\begin{enumerate}
+\item Ingresar los datos y probar dejando algunos espacios en blanco para ver el resultado
+\end{enumerate}
+\item Resultados esperados: El programa deja de funcionar y se cierra abruptamente, se quiebra. Exception: ValueError.
+\item Prioridad: Alta.
+\end{itemize}
+\subsection*{Caso 4}
+\begin{itemize}
+\item Nombre: Formato fecha nacimiento incorrecto. 
+\item Descripción: Probar si la edad se ingresó en el formato incorrecto.
+\item Objetivo de la prueba: verificar que la edad no se ingreso en el formato deseado. 
+\item Requerimientos: Ingresar fecha de nacimiento, base de datos. 
+\item Pasos por seguir: 
+\begin{enumerate}
+\item Ingresar la fecha de nacimiento en formato incorrecto.
+\end{enumerate}
+\item Resultados esperados: El programa continua, finaliza, sin embargo, despliega la edad incorrecta.
+\item Prioridad: Alta.
+\end{itemize}
+
+\subsection*{Caso 5}
+\begin{itemize}
+\item Nombre: Fecha nacimiento caracteres especiales no esperados.
+\item Descripción: \item Probar si la edad contiene letras o caracteres especiales.
+\item Objetivo de la prueba: Ver que sucede si se ingresa la edad con caracteres no esperados por el programa (letras o caracteres especiales) datos.
+\item Requerimientos: Ingresar la edad. 
+\item Pasos por seguir: 
+\begin{enumerate}
+\item Ingresar la edad en el sistema con letras o caracteres especiales y comprobar que sucede.
+\end{enumerate}
+\item Resultados esperados: El programa deja de funcionar y se cierra abruptamente, se quiebra. Exception: ValueError.
+\item Prioridad: Media
+\end{itemize}
+\subsection{Pruebas No Funcionales}
+\subsection*{Caso 1}
 \begin{itemize}
 \item Nombre/Identificador: ``Distelec.txt" formato incorrecto.
 \item Descripción: Verificar que el archivo Distelec este separado por otro carácter que no sea comas.
@@ -371,7 +424,7 @@ Se considera aceptado si el 100\% de los unit test tienen PASS. \\Si existen tes
 \item Prioridad: Alta
 \end{itemize}
 
-\subsection*{Caso 3}
+\subsection*{Caso 2}
 \begin{itemize}
 \item Nombre/Identificador: ``PADRON\_COMPLETO.txt" formato incorrecto.
 \item Descripción: Verificar que el archivo PADRON\_COMPLETO este separado por otro carácter que no sea comas.
@@ -386,21 +439,9 @@ Se considera aceptado si el 100\% de los unit test tienen PASS. \\Si existen tes
 \item Prioridad: Alta
 \end{itemize}
 
-\subsection*{Caso 4}
-\begin{itemize}
-\item Nombre/Identificador: Cédula con letras o caracteres especiales.
-\item Descripción: El usuario digita la cédula utilizando letras o caracteres especiales.
-\item Objetivo de la prueba: No poder correr el programa.
-\item Requerimientos o pre condiciones: No hay.
-\item Pasos a seguir: 
-\begin{enumerate}
-\item Escribir la cédula conteniendo letras o caracteres especiales, en el espacio correspondiente.
-\end{enumerate}
-\item Resultados esperados: El programa deja de funcionar y se cierra abruptamente, se quiebra. Exception: KeyError.
-\item Prioridad: Alta
-\end{itemize}
 
-\subsection*{Caso 5}
+
+\subsection*{Caso 3}
 \begin{itemize}
 \item Nombre: Cédula no encontrada.
 \item Descripción: Probar si no se encuentra una cédula en la base de datos.
@@ -415,21 +456,9 @@ Se considera aceptado si el 100\% de los unit test tienen PASS. \\Si existen tes
 
 \end{itemize}
 
-\subsection*{Caso 6}
-\begin{itemize}
-\item Nombre: Fecha nacimiento vacío. 
-\item Descripción: Probar si se deja alguno de los datos solicitados en blanco.
-\item Objetivo de la prueba: Ver el resultado si se deja uno de los datos solicitados en blanco. 
-\item Requerimientos: Base de datos. 
-\item Pasos a seguir:
-\begin{enumerate}
-\item Ingresar los datos y probar dejando algunos espacios en blanco para ver el resultado
-\end{enumerate}
-\item Resultados esperados: El programa deja de funcionar y se cierra abruptamente, se quiebra. Exception: ValueError.
-\item Prioridad: Alta.
-\end{itemize}
 
-\subsection*{Caso 7}
+
+\subsection*{Caso 4}
 \begin{itemize}
 \item Nombre: ``Distelec.txt"  no existe. 
 \item Descripción: Probar si no existe el archivo de la base de datos ``Distelec.txt".
@@ -443,7 +472,7 @@ Se considera aceptado si el 100\% de los unit test tienen PASS. \\Si existen tes
 \item Prioridad: Muy alta.
 \end{itemize}
 
-\subsection*{Caso 8}
+\subsection*{Caso 5}
 \begin{itemize}
 \item Nombre: ``PADRON\_COMPLETO.txt"  no existe.
 \item Descripción: Probar si no existe el archivo de la base de datos ``PADRON\_COMPLETO.txt".
@@ -457,35 +486,11 @@ Se considera aceptado si el 100\% de los unit test tienen PASS. \\Si existen tes
 \item Prioridad: Muy alta. 
 \end{itemize}
 
-\subsection*{Caso 9}
-\begin{itemize}
-\item Nombre: Formato fecha nacimiento incorrecto. 
-\item Descripción: Probar si la edad se ingresó en el formato incorrecto.
-\item Objetivo de la prueba: verificar que la edad no se ingreso en el formato deseado. 
-\item Requerimientos: Ingresar fecha de nacimiento, base de datos. 
-\item Pasos por seguir: 
-\begin{enumerate}
-\item Ingresar la fecha de nacimiento en formato incorrecto.
-\end{enumerate}
-\item Resultados esperados: El programa continua, finaliza, sin embargo, despliega la edad incorrecta.
-\item Prioridad: Alta.
-\end{itemize}
 
-\subsection*{Caso 10}
-\begin{itemize}
-\item Nombre: Fecha nacimiento caracteres especiales no esperados.
-\item Descripción: \item Probar si la edad contiene letras o caracteres especiales.
-\item Objetivo de la prueba: Ver que sucede si se ingresa la edad con caracteres no esperados por el programa (letras o caracteres especiales) datos.
-\item Requerimientos: Ingresar la edad. 
-\item Pasos por seguir: 
-\begin{enumerate}
-\item Ingresar la edad en el sistema con letras o caracteres especiales y comprobar que sucede.
-\end{enumerate}
-\item Resultados esperados: El programa deja de funcionar y se cierra abruptamente, se quiebra. Exception: ValueError.
-\item Prioridad: Media
-\end{itemize}
 
-\subsection*{Caso 11}
+
+
+\subsection*{Caso 6}
 \begin{itemize}
 \item Nombre: Página incorrecta
 \item Descripción: Probar si la página es incorrecta
@@ -496,7 +501,8 @@ Se considera aceptado si el 100\% de los unit test tienen PASS. \\Si existen tes
 \item Prioridad: Muy alta.
 \end{itemize}
 
-\subsection*{Caso 12}
+\subsection*{Caso 7}
+
 \begin{itemize}
 \item Nombre: Pagina no existe.
 \item Descripción: Probar si la página no se encuentra.
@@ -704,6 +710,197 @@ La lista de candidatos es la siguiente:
 
 \end{lstlisting}
 
+\section{Bug Report}
+
+\subsection*{Bug 1}
+\begin{itemize}
+
+\item Título: “Distelec.txt” formato incorrecto.
+
+\item Descripción: Verificar que el archivo Distelec este separado por otro carácter que no sea comas.
+
+\item Resultado esperado: El programa funciona correctamente si se escribe separado con comas.
+
+\item Resultado desplegado: El programa deja de funcionar y se cierra abruptamente, se quiebra. 
+
+\item Pasos por seguir: 
+\begin{enumerate}
+\item Buscar el archivo “Distelec.txt” en la carpeta donde está el programa.
+\item Separar la información del archivo, utilizando como referencia un “.” para separar.
+\end{enumerate}
+
+\item Otros datos Relevantes: Exception: KeyError.
+\end{itemize}
+\subsection*{Bug 2}
+\begin{itemize}
+\item Título: “PADRON COMPLETO.txt” formato incorrecto.
+
+\item Descripción: Verificar que el archivo PADRON COMPLETO este separado por otro carácter que no sea comas.
+
+\item Resultado esperado: El programa funciona correctamente si se escribe separado con comas.
+
+\item Resultado desplegado: El programa deja de funcionar y se cierra abruptamente, se quiebra.  
+
+\item Pasos por seguir: 
+\begin{enumerate}
+\item Buscar el archivo “PADRON COMPLETO.txt” en la carpeta donde está el programa.  
+\item Separar la información del archivo, utilizando como referencia el ”.” para separar.
+\end{enumerate}
+\item Otros datos Relevantes: Exception: ValueError.
+\end{itemize}
+\subsection*{Bug 3}
+\begin{itemize}
+\item Título: Cedula con letras o caracteres especiales.
+
+\item Descripción: El usuario digita la cedula utilizando letras o caracteres especiales.
+
+\item Resultado esperado: El programa funciona correctamente si se escribe con números.
+
+\item Resultado desplegado: El programa deja de funcionar y se cierra abruptamente, se quiebra. 
+
+\item Pasos por seguir: 
+\begin{enumerate}
+\item Escribir la cédula conteniendo letras o caracteres especiales en el espacio incorrecto.
+\end{enumerate}
+
+\item Otros datos Relevantes: Exception: KeyError.
+\end{itemize}
+\subsection*{Bug 4}
+\begin{itemize}
+\item Título: Cédula no encontrada.
+
+\item Descripción: Probar si no se encuentra una cedula en la base de datos.
+
+\item Resultado esperado: El programa encuentra la cedula y continua su ejecución.
+
+\item Resultado desplegado: El programa deja de funcionar y se cierra abruptamente.
+ 
+\item Pasos para seguir: 
+\begin{enumerate}
+\item Ingresar una cedula incorrecta en el campo correspondiente y ver el resultado.
+\end{enumerate}
+\item Otros datos Relevantes: Exception: KeyError.
+
+\end{itemize}
+\subsection*{Bug 5}
+\begin{itemize}
+\item Título: Fecha nacimiento vacío.
+
+\item Descripción: Probar si se deja alguno de los datos solicitados en blanco.
+
+\item Resultado esperado: El usuario ingresa todos los datos solicitados.
+
+\item Resultado desplegado: El programa deja de funcionar y se cierra abruptamente, se quiebra. 
+
+\item Pasos por seguir: 
+\begin{enumerate}
+\item Ingresar los datos y probar dejando algunos espacios en blanco para ver el resultado
+\end{enumerate}
+\item Otros datos Relevantes: Exception: ValueError.
+\end{itemize}
+\subsection*{Bug 6}
+\begin{itemize}
+\item Título: “Distelec.txt” no existe.
+
+\item Descripción: Probar si no existe el archivo de la base de datos ´ “Distelec.txt”.
+
+\item Resultado esperado: El sistema encuentra en la Base de Datos el distelec.txt
+
+\item Resultado desplegado: El programa deja de funcionar y se cierra abruptamente, se quiebra. 
+
+\item Pasos por seguir: 
+\begin{enumerate}
+\item Verificar la existencia o no del archivo” Distelec.txt” en la base de datos y ejecutar el programa.
+\end{enumerate}
+
+\item Otros datos Relevantes: Exception: FileNotFoundError
+
+\end{itemize}
+\subsection*{Bug 7}
+\begin{itemize}
+\item Título: “PADRON COMPLETO.txt” no existe.
+
+\item Descripción: Probar si no existe el archivo de la base de datos ´ “PADRON COMPLETO.txt”
+
+\item Resultado esperado: El sistema encuentra en la Base de Datos el 
+Padron.txt.
+
+\item Resultado desplegado: El programa deja de funcionar y se cierra abruptamente, se quiebra. 
+
+\item Pasos por seguir: 
+\begin{enumerate}
+\item Ejecutar el programa y ver que sucede si no se encuentra el archivo “PADRON COMPLETO.txt”.
+\end{enumerate}
+\item Otros datos Relevantes: Exception: FileNotFoundError.
+
+\end{itemize}
+\subsection*{Bug 8}
+\begin{itemize}
+\item Título: Formato fecha nacimiento incorrecto.
+
+\item Descripción: Probar si la edad se ingresa en el formato correcto.
+
+\item Resultado esperado: El usuario ingresa la fecha de nacimiento en el formato correcto.
+
+\item Resultado desplegado: El programa continuo, finaliza, sin embargo, despliega la edad incorrecta.
+
+\item Pasos por seguir: 
+\begin{enumerate}
+\item Ingresar la fecha de nacimiento en formato incorrecto.
+\end{enumerate}
+
+\end{itemize}
+\subsection*{Bug 9}
+\begin{itemize}
+\item Título: Fecha nacimiento caracteres especiales no esperados.
+
+\item Descripción: Probar si la edad contiene letras o caracteres especiales.
+
+\item Resultado esperado: El usuario ingresa la Fecha de nacimiento en el formato correcto.
+
+\item Resultado desplegado: El programa deja de funcionar y se cierra abruptamente, se quiebra. 
+
+\item Pasos por seguir: 
+\begin{enumerate}
+\item Ingresar la edad en el sistema con letras o caracteres especiales y comprobar que sucede.
+\end{enumerate}
+\item Otros datos Relevantes: Exception: ValueError.
+\end{itemize}
+
+
+\subsection*{Bug 10}
+\begin{itemize}
+\item Título: Pagina incorrecta
+
+\item Descripción: Probar si la página es incorrecta
+
+\item Resultado esperado: La página es correcta y el sistema sigue.
+
+\item Resultado desplegado: El programa deja de funcionar y se cierra abruptamente, se quiebra. 
+
+\item Pasos por seguir: 
+\begin{enumerate}
+\item Se ingresa a una página incorrecta.
+\end{enumerate}
+\item Otros datos Relevantes: Exception: IndexError.
+\end{itemize}
+\subsection*{Bug 11}
+\begin{itemize}
+\item Título: Pagina no existe
+
+\item Descripción: Probar si la página no se encuentra.
+
+\item Resultado esperado: EL sistema encuentra la pagina y continua con su ejecución.
+
+\item Resultado desplegado: El programa deja de funcionar y se cierra abruptamente, se quiebra. 
+
+\item Pasos por seguir: 
+\begin{enumerate}
+\item Ejecutar el programa y ver que sucede si no encuentra la dirección de la página correcta.
+\end{enumerate}
+\item Otros datos Relevantes: Exception: requests.exceptions.MissingSchema.
+
+\end{itemize}
 
 
 
