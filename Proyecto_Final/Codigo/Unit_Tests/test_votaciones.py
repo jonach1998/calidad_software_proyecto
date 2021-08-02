@@ -2,7 +2,7 @@ import unittest
 import mock
 from Proyecto_Final.Codigo.Votaciones import Votaciones
 import io
-from Mock_URL import url
+from .Mock_URL import url
 import requests
 
 
